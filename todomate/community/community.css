@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.all{
+    margin: 10px;
+}
+
+header{
+    margin-bottom: 80px;
+}
+
+.allbox{
+    padding: 10px 20px;
+    margin: 0 20px;
+}
+.write-button{
+    margin-bottom: 10px;
+}
+
+
+.write-button a{
+    padding: 6px 5px;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;  
+}
+
+button{
+    width: 72px;
+    height: 28px;
+    background-color: transparent;
+    border: none;
+}
+
+.write:hover{
+    color: #666;
+}
+
+
+
+.writebox a{
+    text-decoration-line: none;
+}
+
+.writebox1{
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666;
+    line-height: 1;
+    border-radius: 10px;
+}
+
+.writen{
+    font-size: 10px;
+    font-weight: 400;
+    height: 16px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.writemain{
+    color: rgb(4, 5, 5);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+.writecontent{
+    color: rgb(89, 95, 99);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 10px;
+}
