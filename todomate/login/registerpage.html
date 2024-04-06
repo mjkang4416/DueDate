@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Form</title>
+<link rel="stylesheet" href="koregisterpage.css">
+</head>
+<body>
+
+<div class="signup-container">
+  <h1>SIGN UP</h1>
+  <h3>간편 회원 가입</h3>
+  <div class="social-login">
+    <div class="social-box naver">
+      <a href="https://www.naver.com" target="_blank">
+        <img src="../login/images/naver.jpeg" alt="Naver">
+      </a>
+    </div>
+    <div class="social-box kakao">
+      <a href="https://www.kakao.com" target="_blank">
+        <img src="../login/images/kakao.png" alt="Kakao">
+      </a>
+    </div>
+    <div class="social-box google">
+      <a href="https://www.google.com" target="_blank">
+        <img src="../login/images/google.png" alt="Google">
+      </a>
+    </div>
+  </div>
+
+  <div class="separator-container">
+    <div class="line"></div>
+    <p class="or-text">or</p>
+    <div class="line"></div>
+  </div>
+
+  <form>
+    <input type="text" id="username" placeholder="User name" required >
+    <input type="text" id="nickname" placeholder="Nickname" required>
+    <div class="error-message">
+        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 이미 가입된 닉네임입니다
+      </div>
+    <input type="email" id="email" placeholder="Email" required>
+    <div class="error-message">
+        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 이미 가입된 이메일입니다
+    </div>
+    <input type="num" id="num" placeholder="인증번호 입력" required>
+    <div class="error-message">
+        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 인증번호를 확인해주세요
+    </div>
+    <input type="password" id="password" placeholder="Password" required>
+    <div class="error-message">
+        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 비밀번호는 6자리 이상이여야 합니다
+    </div>
+    <input type="password" id="confirm-password" placeholder="Confirm your Password" required>
+    <div class="error-message">
+        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 비밀번호가 같지 않습니다
+    </div>
+
+    <div class="dob-select">
+        <label for="dob-month">Date Of Birth</label>
+        <select id="dob-month" name="dob-month">
+          <option value="">MM</option>
+          <option value="1">1</option>
+        </select>
+        <select id="dob-day" name="dob-day">
+          <option value="">DD</option>
+          <option value="1">1</option>
+        </select>
+        <select id="dob-year" name="dob-year">
+          <option value="">YYYY</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+            
+
+    <div class="checkbox-group">
+      <label class="checkbox-container">
+        <input type="checkbox" id="service-terms" name="service-terms">
+        <span class="checkbox-label">[필수]서비스 이용약관</span>
+      </label>
+      <label class="checkbox-container">
+        <input type="checkbox" id="privacy-policy" name="privacy-policy">
+        <span class="checkbox-label">[필수]개인정보 수집 · 이용 동의</span>
+      </label>
+      <label class="checkbox-container">
+        <input type="checkbox" id="third-party" name="third-party">
+        <span class="checkbox-label">[필수]제3자 마케팅 정보 수신 동의</span>
+      </label>
+      <label class="checkbox-container">
+        <input type="checkbox" id="age-confirmation" name="age-confirmation">
+        <span class="checkbox-label">[필수] 14세 이상입니다</span>
+      </label>
+    </div>
+
+    <button type="submit" class="signup-button">SIGN UP</button>
+  </form>
+
+  <p class="signin-redirect">Already have an account? <a href="#">Sign In</a></p>
+</div>
+
+</body>
+</html>
