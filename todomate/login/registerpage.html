@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +8,66 @@
 </head>
 <body>
 
-<div class="signup-container">
+<div class="signup">
   <h1>SIGN UP</h1>
   <h3>간편 회원 가입</h3>
   <div class="social-login">
-    <div class="social-box naver">
+    <div class="social-box : naver">
       <a href="https://www.naver.com" target="_blank">
         <img src="../login/images/naver.jpeg" alt="Naver">
       </a>
     </div>
-    <div class="social-box kakao">
+    <div class="social-box : kakao">
       <a href="https://www.kakao.com" target="_blank">
         <img src="../login/images/kakao.png" alt="Kakao">
       </a>
     </div>
-    <div class="social-box google">
+    <div class="social-box : google">
       <a href="https://www.google.com" target="_blank">
         <img src="../login/images/google.png" alt="Google">
       </a>
     </div>
   </div>
 
-  <div class="separator-container">
+  <div class="separator">
     <div class="line"></div>
-    <p class="or-text">or</p>
+    <p class="ortext">or</p>
     <div class="line"></div>
   </div>
 
   <form>
+    <!--유저, 닉네임, 닉네임 중복확인-->
     <input type="text" id="username" placeholder="User name" required >
+    
     <input type="text" id="nickname" placeholder="Nickname" required>
     <div class="error-message">
         <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 이미 가입된 닉네임입니다
+    </div>
+        
+    <!--이메일, 이메일 중복확인, 이메일 인증번호 받기-->
+    <div class="form">
+      <input type="email" id="email" placeholder="Email" required>
+      <div class="emailerror-message">
+        <div class="error-icon-text">
+          <img src="../login/images/warning.png" alt="Warning" class="error-icon">
+          <span>이미 가입된 이메일입니다</span>
+        </div>
+        <button type="button" class="emailverify-button">이메일 인증번호 받기</button>
+       </div>   
+    </div>
+
+    <!--인증번호 재전송,확인 부분-->
+    <div class="form">
+      <input type="text" id="num" placeholder="인증번호 입력" required>
+        <div class="error-message">
+          <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 인증번호를 확인해주세요
+        </div>
+      <div class="buttonCss">
+        <button type="button" class="reverify-button">인증번호 재전송</button>
+        <button type="button" class="confirmverify-button">인증번호 확인</button>
       </div>
-    <input type="email" id="email" placeholder="Email" required>
-    <div class="error-message">
-        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 이미 가입된 이메일입니다
     </div>
-    <input type="num" id="num" placeholder="인증번호 입력" required>
-    <div class="error-message">
-        <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 인증번호를 확인해주세요
-    </div>
+
     <input type="password" id="password" placeholder="Password" required>
     <div class="error-message">
         <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 비밀번호는 6자리 이상이여야 합니다
@@ -58,24 +77,25 @@
         <img src="../login/images/warning.png" alt="Warning" class="error-icon"> 비밀번호가 같지 않습니다
     </div>
 
-    <div class="dob-select">
-        <label for="dob-month">Date Of Birth</label>
-        <select id="dob-month" name="dob-month">
+
+    <div class="birthday-select">
+        <label for="birthday-month">Date Of Birth</label>
+        <select id="birthday-month" name="birthday-month">
           <option value="">MM</option>
           <option value="1">1</option>
         </select>
-        <select id="dob-day" name="dob-day">
+        <select id="birthday-day" name="birthday-day">
           <option value="">DD</option>
           <option value="1">1</option>
         </select>
-        <select id="dob-year" name="dob-year">
+        <select id="birthday-year" name="birthday-year">
           <option value="">YYYY</option>
           <option value="2024">2024</option>
         </select>
       </div>
             
 
-    <div class="checkbox-group">
+    <div class="checkbox">
       <label class="checkbox-container">
         <input type="checkbox" id="service-terms" name="service-terms">
         <span class="checkbox-label">[필수]서비스 이용약관</span>
@@ -96,9 +116,7 @@
 
     <button type="submit" class="signup-button">SIGN UP</button>
   </form>
-
-  <p class="signin-redirect">Already have an account? <a href="#">Sign In</a></p>
+  <p class="signinAsk">이미 계정이 있나요 <a href="../login/loginpage.html">Sign In</a></p>
 </div>
-
 </body>
 </html>
