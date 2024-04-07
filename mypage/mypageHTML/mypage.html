@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mypage</title>
+    <link rel="stylesheet" href="../mypageCSS/mypage.css">
+    <script defer src="../mypageJS/mypageJs.js"></script>
+</head>
+<body>
+    <main>
+        <div id="modal">
+            <div id="modal_body">
+                <div id="modal_body_header" class="box_header_text">
+                    <p id="modal_body_header_text">프로필 편집</p>
+                    <img id="close_modal" src="../img/close_img.png">
+                </div>
+                <hr>
+                <div id="modal_body_main">
+                    <div id="modal_body_img_wrap">
+                        <img class="profile_img" id="modal_img" src="../img/profile_img.png">
+                        <img id="modal_photo" src="../img/photo_img.png">
+                        <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+                    </div>
+                </div>
+                <div id="modal_body_main2">
+                    <div class="modal_text_wrap">
+                        <p class="modal_text">이름 : </p>
+                        <input class="modal_input" id="modal_Id" type="text" value="홍길동">
+                    </div>
+                    <hr class="hr_class2">
+                    <div class="modal_text_wrap">
+                        <p class="modal_text">이메일 : </p>
+                        <input class="modal_input" id="modal_email" type="text" value="dlapdlf@gmail.com">
+                    </div>
+                    <hr class="hr_class2">
+                    <div class="modal_text_wrap">
+                        <p class="modal_text">닉네임 : </p>
+                        <input class="modal_input" id="modal_nickname" type="text" value="사용자123">
+                    </div>
+                    <hr class="hr_class2">
+                </div>
+                <div id="modal_footer">
+                    <div id="modal_button_wrap_wrap">
+                        <div id="modal_button_wrap">
+                            <button id="modal_check" class="modal_button" onclick="">확인</button>
+                            <button id="modal_cancel" class="modal_button" onclick="">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 마이페이지 제목을 담당 -->
+        <div id="main_header">
+            <div id="main_header_text_wrap">
+                <h1 id="main_header_text">MyPage</h1>
+            </div>
+        </div>
+        <!-- 마이페이지 회원정보확인 -->
+        <div id="profile_wrap"> <!-- wrap으로 전체영역을 잡고 -->
+            <div id="profile" class="mypage_box"> <!-- profile로 안쪽 영역을 제대로 잡음 -->
+                <!-- display를 flex로 설정해서 두개의 p태그를 정렬 -->
+                <div id="profile_header">
+                    <p class="box_header_text">회원정보확인</p>
+                    <img id="setting_img" src="../img/setting_img.png">
+                </div>
+                <div class="hr_wrap">
+                    <hr class="hr_class">
+                </div>
+                <!-- 이미지와 사용자의 정보를 나타내는 부분 -->
+                <div id="profile_main">
+                    <div id="profile_main_img_wrap">
+                        <div id="profile_main_img">
+                            <img id="profile_img" src="../img/profile_img.png">
+                        </div>
+                    </div>
+                    <!-- <div id="profile_main_text_wrap">
+                        <div class="profile_main_text">
+                            이름 : 사용자123
+                        </div>
+                        <div class="profile_main_text">
+                            이메일 : dlapdlf123@gmail.com
+                        </div>
+                        <div class="profile_main_text">
+                            닉네임 : slrspdla
+                        </div>
+                    </div> -->
+                    <div id="profile_main_text_wrap">
+                        <ul>
+                            <li class="profile_main_text" id="profile_name">이름 : 홍길동</li>
+                            <li class="profile_main_text" id="profile_email">이메일 : dlapdlf@gmail.com</li>
+                            <li class="profile_main_text" id="profile_nickname">닉네임 : 사용자123</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="profile_footer">
+                    <button id="profile_secession_btn" class="box_btn" onclick="">회원 탈퇴</button>
+                </div>
+            </div>
+        </div>
+        <div id="change_passwd_wrap">
+            <div id="change_passwd" class="mypage_box">
+                <div id="change_passwd_text_wrap">
+                    <p class="box_header_text">비밀번호변경</p>
+                </div>
+                <hr class="hr_class">
+                <div id="change_passwd_warn_wrap">
+                    <p class="change_passwd_warn">비밀번호는 8자이상의 영문자(대,소문자), 숫자, 특수문자를 혼용해 입력해 주십시오.</p>
+                    <p class="change_passwd_warn">동일한 문자반복과 키보드상의 연속된 문자들의 집합등 특정 패턴의 비밀번호를 지정하지 마십시오.</p>
+                    <p class="change_passwd_warn">이전과 동일한 비밀번호를 새 비밀번호로 지정하지 마십시오.</p>
+                    <p class="change_passwd_warn">제 3자가 쉽게 알아챌 수 있는 패턴(이름, 생년월일, 주소 등등)으로 비밀번호를 구성하지 마십시오.</p>
+                </div>
+                <!-- flex 설정하여 두개의 박스를 나란히 정렬 -->
+                <div class="change_passwd_box_wrap">
+                    <div class="change_passwd_box1">
+                        <p class="passwd_text">새로운 비밀번호 입력</p>
+                    </div>
+                    <div class="change_passwd_box2">
+                        <input id="passwd_input" class="passwd_class" type="password">
+                    </div>
+                </div>
+                <br>
+                <div class="change_passwd_box_wrap">
+                    <div class="change_passwd_box1">
+                        <p class="passwd_text">새로운 비밀번호 확인</p>
+                    </div>
+                    <div class="change_passwd_box2">
+                        <input id="passwd_check" class="passwd_class" type="password">
+                    </div>
+                </div>
+                <div id="change_passwd_btn_wrap">
+                    <button id="change_passwd_btn" class="box_btn" onclick="">비밀번호 변경</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body> 
+</html>
