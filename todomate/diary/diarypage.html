@@ -3,9 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Diary</title>
+    <link rel="stylesheet" href="./diarypage.css">
 </head>
 <body>
-    <h1>여기는 다이어리 페이지 !! 여기는 다이어리 페이지!!</h1>
+    <div id="app">
+        <header></header>
+        <!--  -->
+        <div class="diarySection">
+            <section class="leftHamburger" ><!-- style="display: none;" -->
+                <div class="leftNavWrap">
+                    <div class="leftNavWrapWeather">
+                        <div class="api">API~~~~~~~~~</div>
+                    </div>
+                    <div class="leftNavWrapCalendar">
+                        <!--  -->
+                        <div class="leftCalender">
+                            <div class="left leftCalendarMonth">
+                                <p class="current-date">04</p>
+                                <button class="btn leftButton prev"> prev </button>
+                                <button class="btn leftButton next"> next </button>
+                            </div>
+                        </div>
+                        <div class="leftCalendardate">
+                            <ul class="weeks">
+                                <li>Sun</li>
+                                <li>Mon</li>
+                                <li>Tue</li>
+                                <li>Wed</li>
+                                <li>Thu</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                            </ul>
+                            <ul class="days">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li>11</li>
+                                <li>12</li>
+                                <li>13</li>
+                                <li>14</li>
+                                <li>15</li>
+                                <li>16</li>
+                                <li>17</li>
+                                <li>18</li>
+                                <li>19</li>
+                                <li>20</li>
+                                <li>21</li>
+                                <li>22</li>
+                                <li>23</li>
+                                <li>24</li>
+                                <li>25</li>
+                                <li>26</li>
+                                <li>27</li>
+                                <li>28</li>
+                                <li>29</li>
+                                <li>30</li>
+                                <li>31</li>
+                            </ul>
+                        </div>
+                        <!--  -->
+                    </div>
+                    <div class="leftNavWrapDiarylist">
+                        <div class="leftNavWrapDiary">
+                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
+                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button><!-- 연필이모 -->
+                            </div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>ddddddddddddddddddsdddsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p></div>
+                        </div>
+                        <div class="leftNavWrapDiary">
+                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
+                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
+                            </div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>내용내용</p></div>
+                        </div>
+                        <div class="leftNavWrapDiary">
+                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
+                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
+                            </div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>내용내용</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--  -->
+            <div class="rightSectionrWrap">
+                <div class="diaryTopWrap">
+                    <div class="diaryOrCalendar" style="display: none;">일기장</div> <!-- style="display: none;" -->
+                    <div class="rightCalendarMonth" >
+                        <button class="btn rightButton prev"> prev </button>
+                        <p class="current-date">April</p>
+                        <button class="btn rightButton next"> next </button>
+                    </div>
+                    <div class="diaryTopBtnWrap">
+                        <div class="writeDiarybtn">
+                            <button>일기</button><!-- 연필모양이모티콘 -->
+                        </div>
+                        <div class="showCalendar">
+                            <button>캘린더</button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <section class="DiaryCalender" >
+                    <div class="rightCalender">
+                        <div class="rightCalendardate">
+                            <ul class="weeks">
+                                <div><li>Sun</li></div>
+                                <div><li>Mon</li></div>
+                                <div><li>Tue</li></div>
+                                <div><li>Wed</li></div>
+                                <div><li>Thu</li></div>
+                                <div><li>Fri</li></div>
+                                <div><li>Sat</li></div>
+                            </ul>
+                            <ul class="days">
+                                <div><li>1<a></a></li></div>
+                                <div><li>2<a></a></li></div>
+                                <div><li>3<a></a></li></div>
+                                <div><li>4<a></a></li></div>
+                                <div><li>5<a></a></li></div>
+                                <div><li>6<a></a></li></div>
+                                <div><li>7<a></a></li></div>
+                                <div><li>8<a></a></li></div>
+                                <div><li>9<a></a></li></div>
+                                <div><li>10<a></a></li></div>
+                                <div><li>11<a></a></li></div>
+                                <div><li>12<a></a></li></div>
+                                <div><li>13<a></a></li></div>
+                                <div><li>14<a></a></li></div>
+                                <div><li>15<a></a></li></div>
+                                <div><li>16<a></a></li></div>
+                                <div><li>17<a></a></li></div>
+                                <div><li>18<a></a></li></div>
+                                <div><li>19<a></a></li></div>
+                                <div><li>20<a></a></li></div>
+                                <div><li>21<a></a></li></div>
+                                <div><li>22<a></a></li></div>
+                                <div><li>23<a></a></li></div>
+                                <div><li>24<a></a></li></div>
+                                <div><li>25<a></a></li></div>
+                                <div><li>26<a></a></li></div>
+                                <div><li>27<a></a></li></div>
+                                <div><li>28<a></a></li></div>
+                                <div><li>29<a></a></li></div>
+                                <div><li>30<a></a></li></div>
+                                <div><li>31<a></a></li></div>                             
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!--  -->
+                <section class="myDiary" style="display: none;"> <!-- style="display: none;" -->
+                    <div class="writeDiarySection">
+                        <form id="writeDiary" class="writeDiaryForm" action="#">
+                            <div class="myDiaryTop">
+                                <div class="myDiaryDateWrap">
+                                    <input type="date" class="myDiaryDate">
+                                </div>
+                                <div class="myDiaryEmoWrap">
+                                    <select name="날씨" id="diaryEmo" class="diaryEmo">
+                                        <option value="🌞">맑음 🌞</option>
+                                        <option value="☁">구름 ☁</option>
+                                        <option value="🌨">비🌨</option>
+                                        <option value="🌩">번개🌩</option>
+                                        <option value="⛅">흐림⛅</option>
+                                        <option value="😀">😀</option>
+                                        <option value="😱">😱</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="myDiaryTitleWrap">
+                                <input type="text" id="myDiaryTitle" name="myDiaryTitle" class="myDiaryTitle" placeholder="제목 (최대 17글자)" maxLength="17">
+                            </div>
+                            <div class="myDiaryDetailWrap">
+                                <textarea id="diaryDetail" class="myDiaryDetail" placeholder="최대 70글자까지 작성 가능합니다" maxLength="70"></textarea>
+                            </div>
+                            <input type="button" id="submit" class="submit-button" value="저장" name="제출버튼">
+                            <input type="button" id="cancel" value="작성 취소">
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
