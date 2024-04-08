@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diary</title>
     <link rel="stylesheet" href="./diarypage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div id="app">
@@ -21,8 +22,8 @@
                         <div class="leftCalender">
                             <div class="left leftCalendarMonth">
                                 <p class="current-date">04</p>
-                                <button class="btn leftButton prev"> prev </button>
-                                <button class="btn leftButton next"> next </button>
+                                <button class="btn leftButton prev material-symbols-outlined"> chevron_left </button>
+                                <button class="btn leftButton next material-symbols-outlined"> chevron_right </button>
                             </div>
                         </div>
                         <div class="leftCalendardate">
@@ -97,23 +98,23 @@
             <!--  -->
             <div class="rightSectionrWrap">
                 <div class="diaryTopWrap">
-                    <div class="diaryOrCalendar" style="display: none;">일기장</div> <!-- style="display: none;" -->
-                    <div class="rightCalendarMonth" >
-                        <button class="btn rightButton prev"> prev </button>
+                    <div class="diaryOrCalendar" >일기장</div> <!-- style="display: none;" -->
+                    <div class="rightCalendarMonth" style="display: none;">
+                        <button class="btn rightButton prev material-symbols-outlined"> chevron_left </button>
                         <p class="current-date">April</p>
-                        <button class="btn rightButton next"> next </button>
+                        <button class="btn rightButton next material-symbols-outlined"> chevron_right </button>
                     </div>
                     <div class="diaryTopBtnWrap">
                         <div class="writeDiarybtn">
-                            <button>일기</button><!-- 연필모양이모티콘 -->
+                            <button class="material-symbols-outlined">two_pager</button><!-- 연필모양이모티콘 -->
                         </div>
                         <div class="showCalendar">
-                            <button>캘린더</button>
+                            <button class="material-symbols-outlined">calendar_month</button>
                         </div>
                     </div>
                 </div>
                 <!--  -->
-                <section class="DiaryCalender" >
+                <section class="DiaryCalender" style="display: none;">
                     <div class="rightCalender">
                         <div class="rightCalendardate">
                             <ul class="weeks">
@@ -162,7 +163,7 @@
                     </div>
                 </section>
                 <!--  -->
-                <section class="myDiary" style="display: none;"> <!-- style="display: none;" -->
+                <section class="myDiary" > <!-- style="display: none;" -->
                     <div class="writeDiarySection">
                         <form id="writeDiary" class="writeDiaryForm" action="#">
                             <div class="myDiaryTop">
