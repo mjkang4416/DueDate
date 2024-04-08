@@ -1,0 +1,355 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.material-symbols-outlined{
+  font-size: 30px !important;
+}
+
+.rightSectionrWrap .material-symbols-outlined{
+  font-size: 48px !important;
+}
+
+header{
+  height: 36px;
+  border: 1px solid black;
+}
+
+.diarySection{
+  display: flex;
+}
+
+.rightSectionrWrap{
+  margin: 8rem auto;
+}
+
+.diaryTopWrap{
+  display: flex;
+  justify-content: center;
+  /* margin-left: 30rem; */
+}
+
+.diaryTopBtnWrap{
+  float: right;
+  margin-left: 74rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.diaryOrCalendar{
+  font-size: 2.5rem;
+}
+
+.showCalendar{
+  margin-left: .9rem;
+}
+
+.diaryOrCalendar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+}
+
+/* -----------------------------------------------------큰 달력 -----------------------------------------------------*/
+
+.rightCalendarMonth{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 30rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.rightCalendardate{
+  margin-top: 4rem;
+}
+
+.rightCalendardate ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.rightCalendardate .weeks li{
+  font-weight: 500;
+}
+
+.rightCalendardate .days{
+  margin-bottom: 20px;
+}
+
+.rightCalendardate .days li{
+  text-align: left;
+}
+
+.rightCalendardate .weeks div{
+  width: calc(100% / 7);
+  position: relative;
+  justify-content: center;
+  border-bottom: 2px solid black;;
+}
+
+.rightCalendardate .days div{
+  height: 8rem;
+  width: calc(100% / 7);
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+}
+
+.rightCalendardate .days div:last-child{
+  border-right: 1px solid #aaa;
+}
+
+.rightCalendardate .days div:nth-child(7n){
+  border-right: 1px solid #aaa;
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* 다이어리  */
+.myDiary{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  margin-top: 5rem;
+}
+
+.writeDiarySection{
+  /* background-color: #fffff5; */
+  background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBOwEB%2FbtrBHUo6yQP%2FKKIoD94DAhBHsiupNAWVBK%2Fimg.png");
+  border: 1px solid #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+}
+
+.myDiaryDate, .myDiaryTitle, .diaryEmo, .myDiaryDetail{
+  border-width: 0;
+  background-color: transparent;
+}
+
+.writeDiaryForm{
+  width: 50rem;
+}
+
+.myDiaryTop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.myDiaryDateWrap{
+  border-right: 1px solid grey;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.myDiaryDate{
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.myDiaryTitleWrap{
+  border-top: 1px solid grey;
+  padding: 10px 10px 5px 20px;
+  border-bottom: 1px solid gray;
+}
+
+.myDiaryTitle{
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.myDiaryEmoWrap{
+  padding: 10px 10px 5px 10px;
+  width: 35%;
+}
+
+.diaryEmo{
+  width: 100%;
+  height: 40px;
+}
+
+.myDiaryDetailWrap{
+  font-size: 32px;
+  margin: 10px;
+  line-height: 32px;
+  letter-spacing: 0.5em;
+  border: 1px solid grey;
+
+  background: repeating-linear-gradient(to bottom, transparent, transparent 48px, gray 48px, gray 49px);
+}
+
+.myDiaryDetail{
+  width: 100%;
+  height: 200px;
+  /* margin: 15px 0; */
+  padding: 10px;
+  font-size: 18px;
+  line-height: 48px;
+  resize: none;
+  outline: none;
+}
+
+#submit {
+  width: 18%;
+  height: 30px;
+  float: right;
+  margin-left: 8px;
+}
+
+#cancel{
+  width: 18%;
+  height: 30px;
+  float: right;
+}
+/*  */
+.leftHamburger{
+  margin-top:0;
+  margin-left: 0;
+  width: 360px;
+  height: 100%;
+  background-color: rgb(243, 243, 243);
+  padding: 36px;
+}
+
+.leftNavWrap{
+}
+
+/* api */
+.leftNavWrapWeather{
+  width: 100%;
+  height: 100px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  border: 1px solid black;
+}
+
+.api{
+  text-align: center;
+  align-items: center;
+}
+
+
+/* leftCalendar */
+.leftNavWrapCalendar{
+  width: 100%;
+  height: 30%;
+}
+
+.leftCalender{
+  /* width: 80%; */
+  background: #fff;
+  border-radius: 10px;
+  /* padding: 25px; */
+}
+
+.leftCalendarMonth{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-bottom: 5%;
+  margin-top:3rem;
+}
+
+.leftButton:nth-child(2){
+  margin-left: 12rem;
+}
+
+.leftCalender .leftCalendarMonth .current-date{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.leftCalendardate ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.leftCalendardate .weeks li{
+  font-weight: 500;
+}
+
+.leftCalendardate .days{
+  margin-bottom: 20px;
+}
+
+.leftCalendardate ul li{
+  width: calc(100% / 7);
+  position: relative;
+}
+
+.leftCalendardate .days li{
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* left diaryList */
+.leftNavWrapDiarylist{
+  
+  
+}
+
+.leftNavWrapDiary{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+}
+
+.leftNavWrapDiary:hover{
+  box-shadow: 0 0 20px #aaa;
+}
+
+.leftDiaryTitle{
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftDiaryDetail{
+  margin-top: .5rem;
+  height: 5rem;
+  text-align: center;
+  overflow: hidden;
+  word-break: break-word;
+  font-size: 1.1rem;
+    
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical
+}
+
+
+
