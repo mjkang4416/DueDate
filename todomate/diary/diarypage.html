@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diary</title>
     <link rel="stylesheet" href="./diarypage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script defer src="./diarypage.js"></script>
+    <title>Diary</title>
 </head>
 <body>
     <div id="app">
@@ -21,9 +22,9 @@
                         <!--  -->
                         <div class="leftCalender">
                             <div class="left leftCalendarMonth">
-                                <p class="current-date">04</p>
-                                <button class="btn leftButton prev material-symbols-outlined"> chevron_left </button>
-                                <button class="btn leftButton next material-symbols-outlined"> chevron_right </button>
+                                <p class="leftCurrent-date"></p>
+                                <button id="prev" class="btn leftButton material-symbols-outlined"> chevron_left </button>
+                                <button id="next" class="btn leftButton material-symbols-outlined"> chevron_right </button>
                             </div>
                         </div>
                         <div class="leftCalendardate">
@@ -36,7 +37,7 @@
                                 <li>Fri</li>
                                 <li>Sat</li>
                             </ul>
-                            <ul class="days">
+                            <ul class="leftDays">
                                 <li>1</li>
                                 <li>2</li>
                                 <li>3</li>
@@ -75,46 +76,46 @@
                     <div class="leftNavWrapDiarylist">
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button><!-- 연필이모 -->
+                                <button id="diaryEmo" class="btn leftDiaryEmo diaryEmo"><p>이모이모</p></button><!-- 이모티콘 -->
                             </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>ddddddddddddddddddsdddsddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p></div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>이모이모 자리엔 일기장에서 작성한 이모티콘이 들어갈 예정입니다</p></div>
                         </div>
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
                                 <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
                             </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>내용내용</p></div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>이곳은 지금까지 작성한 일기들을 사이드바에서 작게 확인할 수 있습니다 </p></div>
                         </div>
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
                                 <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
                             </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>내용내용</p></div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>디비연동이 필요해보여 임시로 작성해 놓았습니다 작은달력과 큰달력 연동은 백단기간에 진행하도록 하겠습니다</p></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--  -->
+            <!-- 일기장 || 큰달력 -->
             <div class="rightSectionrWrap">
                 <div class="diaryTopWrap">
-                    <div class="diaryOrCalendar" >일기장</div> <!-- style="display: none;" -->
-                    <div class="rightCalendarMonth" style="display: none;">
-                        <button class="btn rightButton prev material-symbols-outlined"> chevron_left </button>
-                        <p class="current-date">April</p>
-                        <button class="btn rightButton next material-symbols-outlined"> chevron_right </button>
-                    </div>
+                    <div class="diaryOrCalendar" style="display: none;">✨일기장🎉</div> <!-- style="display: none;" -->
+                        <div class="rightCalendarMonth" >
+                            <button id="prev" class="btn rightButton material-symbols-outlined"> chevron_left </button>
+                            <p class="current-date"></p>
+                            <button id="next" class="btn rightButton material-symbols-outlined"> chevron_right </button>
+                        </div>
                     <div class="diaryTopBtnWrap">
                         <div class="writeDiarybtn">
-                            <button class="material-symbols-outlined">two_pager</button><!-- 연필모양이모티콘 -->
+                            <button id="showDiary" class="diarybtn material-symbols-outlined">two_pager</button>
                         </div>
                         <div class="showCalendar">
-                            <button class="material-symbols-outlined">calendar_month</button>
+                            <button id="showCalendarbtn" class="calendarbtn material-symbols-outlined">calendar_month</button>
                         </div>
                     </div>
                 </div>
-                <!--  -->
-                <section class="DiaryCalender" style="display: none;">
+                <!-- 큰달력 -->
+                <section class="diaryCalender">
                     <div class="rightCalender">
                         <div class="rightCalendardate">
                             <ul class="weeks">
@@ -126,52 +127,22 @@
                                 <div><li>Fri</li></div>
                                 <div><li>Sat</li></div>
                             </ul>
-                            <ul class="days">
-                                <div><li>1<a></a></li></div>
-                                <div><li>2<a></a></li></div>
-                                <div><li>3<a></a></li></div>
-                                <div><li>4<a></a></li></div>
-                                <div><li>5<a></a></li></div>
-                                <div><li>6<a></a></li></div>
-                                <div><li>7<a></a></li></div>
-                                <div><li>8<a></a></li></div>
-                                <div><li>9<a></a></li></div>
-                                <div><li>10<a></a></li></div>
-                                <div><li>11<a></a></li></div>
-                                <div><li>12<a></a></li></div>
-                                <div><li>13<a></a></li></div>
-                                <div><li>14<a></a></li></div>
-                                <div><li>15<a></a></li></div>
-                                <div><li>16<a></a></li></div>
-                                <div><li>17<a></a></li></div>
-                                <div><li>18<a></a></li></div>
-                                <div><li>19<a></a></li></div>
-                                <div><li>20<a></a></li></div>
-                                <div><li>21<a></a></li></div>
-                                <div><li>22<a></a></li></div>
-                                <div><li>23<a></a></li></div>
-                                <div><li>24<a></a></li></div>
-                                <div><li>25<a></a></li></div>
-                                <div><li>26<a></a></li></div>
-                                <div><li>27<a></a></li></div>
-                                <div><li>28<a></a></li></div>
-                                <div><li>29<a></a></li></div>
-                                <div><li>30<a></a></li></div>
-                                <div><li>31<a></a></li></div>                             
+                            <ul class="days">                             
                             </ul>
                         </div>
                     </div>
                 </section>
-                <!--  -->
-                <section class="myDiary" > <!-- style="display: none;" -->
+                <!-- 일기장 -->
+                <section class="myDiary" style="display: none;"> <!-- style="display: none;" -->
                     <div class="writeDiarySection">
                         <form id="writeDiary" class="writeDiaryForm" action="#">
                             <div class="myDiaryTop">
                                 <div class="myDiaryDateWrap">
+                                    <div>날짜 :</div>
                                     <input type="date" class="myDiaryDate">
                                 </div>
                                 <div class="myDiaryEmoWrap">
-                                    <select name="날씨" id="diaryEmo" class="diaryEmo">
+                                    <select name="날씨" id="diaryEmo" class="rightDiaryEmo">
                                         <option value="🌞">맑음 🌞</option>
                                         <option value="☁">구름 ☁</option>
                                         <option value="🌨">비🌨</option>
@@ -183,6 +154,7 @@
                                 </div>
                             </div>
                             <div class="myDiaryTitleWrap">
+                                <div>제목 :</div>
                                 <input type="text" id="myDiaryTitle" name="myDiaryTitle" class="myDiaryTitle" placeholder="제목 (최대 17글자)" maxLength="17">
                             </div>
                             <div class="myDiaryDetailWrap">
