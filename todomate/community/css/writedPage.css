@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    height: 100px;
+}
+
+
+.writted-page{
+    margin: 0 350px;
+    
+}
+  
+.write-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.nic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(4, 5, 5);
+}
+
+.nic img{
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-right: 5px;
+}
+
+.dok{
+    background-color:transparent;
+    border: none;
+    width: 1.5vw;
+    height: 1.5vw;;
+}
+
+.dok img{
+    width: 1.0vw;
+    height: 1.0vw;
+}
+
+.alter-box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.correction{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: solid 1px grey;
+    border-radius: 6px;
+    padding: 6px 4px;
+}
+
+.correction div{
+    padding: 10px;
+}
+
+h2{
+    margin: 10px;
+    padding-top: 20px;
+}
+
+.data{
+    margin: 10px;
+    height: 300px;
+}
+
+.writted-bottom{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.all-writed{
+    display: flex;
+    flex-direction: row;
+}
+
+.all-writed div{
+    margin-right: 10px;
+}
+
+.writted-num{
+    color: grey;
+    font-weight: bold;
+}
+
+.writted-time{
+    font-size: 13px;
+
+}
+
+.comment div{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.comment-place{
+    border: 1px solid rgb(225, 228, 230);
+    width: 100%;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    height: 70px;
+}
+
+.comment-bt{
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    padding: 10px;
+}
+
+.comment-main{
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid rgb(225, 228, 230);
+}
+
+.userImg{
+    border-radius: 100%;
+    width: 2vw;
+    height: 2vw;
+    margin-right: 5px;
+}
+
+
+
+.alter-box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.correction{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: solid 1px grey;
+    border-radius: 6px;
+    padding: 6px 4px;
+}
+
+.correction div{
+    padding: 10px;
+}
+
+.comment-main{
+    display: flex;
+}
