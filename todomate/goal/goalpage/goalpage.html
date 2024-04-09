@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./goalpage.css">
+    <script defer src="./goalpage.js"></script>
+</head>
+<body>
+    <main>
+        <div id="main_header">
+            <div id="main_header_wrap">
+                <img id="minus" class="main_header_img" src="../img/minus_img.png">
+                <h1 id="main_header_num">3</h1>
+                <img id="plus" class="main_header_img" src="../img/plus_img.png">
+            </div>
+        </div>
+        <div id="main_body">
+            <div id="main_body_left">
+                <div id="main_body_task">
+                    <h1 id="task_h1">TASK</h1>
+                    <div id="task_box_wrap">
+                        <div id="task_box">
+                            <div id="task_box_header">
+                                <p id="task_deadline_text">Deadline</p>
+                                <p id="task_progress_text">Progress</p>
+                            </div>
+                            <div id="task_box_one" class="task_box_div">
+                                <div id="task_box_first_box_wrap" class="task_box_in_box_wrap">
+                                    <div id="task_box_first_box" class="task_box_in_box">
+                                        <img id="blue_dot" class="dot" src="../img/blue_dot_img.png">
+                                        <p id="task_box_first_text" class="task_box_in_text">목표</p>
+                                    </div>
+                                </div>
+                                <div class="gauge">
+                                    <div id="goal_bar" class="bar"></div>
+                                    <div id="goal_percentage" class="percentage">0%</div>
+                                    <button class="increaseButton">Increase</button>
+                                </div>
+                            </div>
+                            <div id="task_box_goal" class="task_box_div">
+                                <div id="task_box_goal_first">
+                                    <ul id="task_box_goal_ul" class="task_box_ul">
+                                        <li class="task_box_li">
+                                            <span class="goal_li_goal">매일 아침 달리기</span>
+                                            <span class="goal_li_deadline">24.03.23</span>
+                                        </li>
+                                        <li class="task_box_li">
+                                            <span class="goal_li_goal">매일 팔굽혀펴기 하기</span>
+                                            <span class="goal_li_deadline">24.03.27</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="task_box_two" class="task_box_div">
+                                <div id="task_box_second_box_wrap" class="task_box_in_box_wrap">
+                                    <div id="task_box_second_box" class="task_box_in_box">
+                                        <img id="green_dot" class="dot" src="../img/green_dot_img.png">
+                                        <p id="task_box_second_text" class="task_box_in_text">목표</p>
+                                    </div>
+                                </div>
+                                <div class="gauge">
+                                    <div id="projecet_bar" class="bar"></div>
+                                    <div id="project_percentage" class="percentage">0%</div>
+                                    <button class="increaseButton">Increase</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
