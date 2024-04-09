@@ -49,8 +49,7 @@ header{
 }
 
 .diaryTopBtnWrap{
-  float: right;
-  margin-left: 74rem;
+  margin-right: -60rem;
   display: flex;
   align-items: center;
   font-size: 2rem;
@@ -84,7 +83,8 @@ header{
 }
 
 .rightCalendardate{
-  margin-top: 4rem;
+  width: 60rem;
+  margin-top: 2rem;
 }
 
 .rightCalendardate ul{
@@ -129,7 +129,24 @@ header{
   border-right: 1px solid #aaa;
 }
 
+.days li.inactive {
+  color: #aaa;
+}
 
+.days div:hover {
+  background: #484848;
+  color: #fff;
+}
+
+.active:after{
+  color:#000000;
+  background-color: rgb(255, 211, 211);
+  content: "오늘";
+  float: right;
+  width: 50%;
+  text-align: center;
+  border-radius: .3rem 0 .3rem .3rem;
+}
 
 /* -------------------------------------------------------------------------------------------------------------------- */
 /* 다이어리  */
@@ -138,11 +155,10 @@ header{
   flex-direction: column;
   align-items: center;
   padding: 50px 0px;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .writeDiarySection{
-  /* background-color: #fffff5; */
   background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBOwEB%2FbtrBHUo6yQP%2FKKIoD94DAhBHsiupNAWVBK%2Fimg.png");
   border: 1px solid #aaa;
   font-size: 30px;
@@ -150,7 +166,7 @@ header{
   letter-spacing: 0.25em;
 }
 
-.myDiaryDate, .myDiaryTitle, .diaryEmo, .myDiaryDetail{
+.myDiaryDate, .myDiaryTitle, .rightDiaryEmo, .myDiaryDetail{
   border-width: 0;
   background-color: transparent;
 }
@@ -169,6 +185,13 @@ header{
   border-right: 1px solid grey;
   padding: 10px 20px;
   width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.myDiaryDateWrap div{
+  width: 25%;
+  font-size: 1.9rem;
 }
 
 .myDiaryDate{
@@ -181,6 +204,13 @@ header{
   border-top: 1px solid grey;
   padding: 10px 10px 5px 20px;
   border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+
+.myDiaryTitleWrap div{
+  width: 18%;
+  font-size: 1.9rem;
 }
 
 .myDiaryTitle{
@@ -188,14 +218,18 @@ header{
   height: 40px;
   font-size: 16px;
   line-height: 40px;
+  outline: none;
 }
 
 .myDiaryEmoWrap{
   padding: 10px 10px 5px 10px;
   width: 35%;
+  align-content: center;
+  display: flex;
+  align-items: center;
 }
 
-.diaryEmo{
+.rightDiaryEmo{
   width: 100%;
   height: 40px;
 }
@@ -233,6 +267,7 @@ header{
   height: 30px;
   float: right;
 }
+
 /*  */
 .leftHamburger{
   margin-top:0;
@@ -241,9 +276,6 @@ header{
   height: 100%;
   background-color: rgb(243, 243, 243);
   padding: 36px;
-}
-
-.leftNavWrap{
 }
 
 /* api */
@@ -277,16 +309,12 @@ header{
 .leftCalendarMonth{
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   margin-bottom: 5%;
   margin-top:3rem;
 }
 
-.leftButton:nth-child(2){
-  margin-left: 12rem;
-}
-
-.leftCalender .leftCalendarMonth .current-date{
+.leftCalender .leftCalendarMonth .leftCurrent-date{
   font-size: 24px;
   font-weight: 600;
 }
@@ -302,7 +330,7 @@ header{
   font-weight: 500;
 }
 
-.leftCalendardate .days{
+.leftCalendardate .leftDays{
   margin-bottom: 20px;
 }
 
@@ -311,16 +339,30 @@ header{
   position: relative;
 }
 
-.leftCalendardate .days li{
+.leftCalendardate .leftDays li{
   z-index: 1;
   cursor: pointer;
 }
 
-/* left diaryList */
-.leftNavWrapDiarylist{
-  
-  
+.leftDays li.inactive {
+  color: #aaa;
 }
+
+.leftDays li:hover {
+  background: #484848;
+  color: #fff;
+  border-radius: 15%;
+}
+
+.leftActive{
+  color:#000000;
+  background-color: rgb(255, 212, 212);
+  border-radius: .3rem;
+}
+
+
+
+/* left diaryList */
 
 .leftNavWrapDiary{
   margin-top: 2.5rem;
