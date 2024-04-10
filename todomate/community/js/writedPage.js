@@ -14,6 +14,9 @@ const inputElement = document.querySelector('.comment-place');
 const commentBt = document.querySelector('.comment-bt');
 const comm = document.querySelector('.comm-content');
 const comSu = document.querySelector('.com-su');
+const dok = document.querySelector('.dok');
+const correction = document.querySelector('.co');
+let i = 0; 
 
 btnOk.addEventListener("click" , ()=>{window.location.href = "../html/communitypage.html";});
 btnNo.addEventListener("click" , ()=>{ modal.style.display="none";} );
@@ -28,7 +31,7 @@ function checkInput() {
 };
 
 function checkInput2(){
-    if( comSu.value == ''){
+    if(comSu.value == ''){
         alert('입력란이 비어있습니다!');
         return 1; 
     }
@@ -57,4 +60,18 @@ function checkHak(){
         alt.style.display = "flex";
         
     }
-}
+};
+
+dok.addEventListener("click",()=>{
+    if(i==0){
+    correction.style.display="block";
+    i ++; 
+    }
+    else{
+    correction.style.display="none";
+    i=0; 
+    }
+});
+
+
+
