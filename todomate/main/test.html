@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>DueDate</title>
+    <style>
+      .category {
+        margin-bottom: 20px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .category h3 {
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .todo-items {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .todo-items input {
+        margin-bottom: 5px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content button {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        text-align: left;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .dropdown-content button:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .color-picker {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .delete-btn {
+        background-color: #ff0000;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-weight: bold;
+        font-size: 12px;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mini-calendar" id="mini-calendar">
+      <h2>Mini Calendar</h2>
+      <button id="mini-prev-month-btn">&lt;</button>
+      <h2 id="mini-current-month"></h2>
+      <button id="mini-next-month-btn">&gt;</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="mini-calendar-body"></tbody>
+      </table>
+    </div>
+
+    <div class="calendar-container" id="calendar-container">
+      <div class="todo-list" id="todo-list">
+        <h2>Todo List</h2>
+        <button class="add-category-btn" onclick="addCategory(this)">
+          + Add Category
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function addTodo(btn) {
+        const category = btn.parentNode;
+        const todoItems = category.querySelector(".todo-items");
+        const newTodoItem = document.createElement("div");
+        newTodoItem.classList.add("todo-item");
+        const newTodoInput = document.createElement("input");
+        newTodoInput.type = "text";
+        newTodoInput.classList.add("todo");
+        newTodoInput.classList.add("category-todo-input");
+        newTodoInput.id = "categoryToDoInput";
+        newTodoInput.placeholder = "할일 추가";
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.onclick = function () {
+          deleteTodoItem(this);
+        };
+        newTodoItem.appendChild(newTodoInput);
+        newTodoItem.appendChild(deleteBtn);
+        todoItems.appendChild(newTodoItem);
+      }
+
+      function addCategory(btn) {
+        const todoList = btn.parentNode;
+        if (todoList.querySelectorAll(".category").length >= 6) {
+          alert("You cannot add more than 6 categories.");
+          return;
+        }
+
+        const newCategory = document.createElement("div");
+        newCategory.classList.add("category");
+        const categoryId =
+          "category-" + (document.querySelectorAll(".category").length + 1);
+        newCategory.id = categoryId;
+
+        const categoryNameInput = document.createElement("input");
+        categoryNameInput.type = "text";
+        categoryNameInput.classList.add("category-name");
+        categoryNameInput.placeholder = "Enter category name...";
+        categoryNameInput.onclick = function () {
+          editCategoryName(this);
+        };
+        newCategory.appendChild(categoryNameInput);
+
+        const todoItemsList = document.createElement("div");
+        todoItemsList.classList.add("todo-items");
+        const todoItem1 = document.createElement("input");
+        todoItem1.type = "text";
+        todoItem1.classList.add("todo");
+        todoItem1.classList.add("category-todo-input");
+        todoItem1.id = "categoryToDoInput";
+        todoItem1.placeholder = "할일 추가";
+        todoItemsList.appendChild(todoItem1);
+        newCategory.appendChild(todoItemsList);
+
+        const dropdown = document.createElement("div");
+        dropdown.classList.add("dropdown");
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "색 선택";
+        editBtn.classList.add("edit-category-btn");
+        dropdown.appendChild(editBtn);
+
+        const dropdownContent = document.createElement("div");
+        dropdownContent.classList.add("dropdown-content");
+
+        const colorBtns = [
+          "#ff0000",
+          "#00ff00",
+          "#0000ff",
+          "#ffff00",
+          "#ff00ff",
+          "#00ffff",
+        ].map((color) => {
+          const btn = document.createElement("button");
+          btn.style.backgroundColor = color;
+          btn.classList.add("color-picker");
+          btn.onclick = function () {
+            changeCategoryColor(newCategory, color);
+          };
+          dropdownContent.appendChild(btn);
+          return btn;
+        });
+
+        dropdown.appendChild(dropdownContent);
+        newCategory.appendChild(dropdown);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "X";
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.onclick = function () {
+          deleteCategory(this);
+        };
+        newCategory.appendChild(deleteBtn);
+
+        const addTodoBtn = document.createElement("button");
+        addTodoBtn.textContent = "+ Add Todo";
+        addTodoBtn.classList.add("add-todo-btn");
+        addTodoBtn.onclick = function () {
+          addTodo(this);
+        };
+        newCategory.appendChild(addTodoBtn);
+
+        todoList.insertBefore(newCategory, btn);
+      }
+
+      function editCategoryName(inputElement) {
+        inputElement.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            inputElement.blur();
+          }
+        });
+
+        inputElement.addEventListener("blur", function () {
+          const newName = inputElement.value.trim();
+          if (newName !== "") {
+            inputElement.parentNode.querySelector(
+              ".category-name"
+            ).textContent = newName;
+          }
+        });
+
+        inputElement.focus();
+      }
+
+      function changeCategoryColor(category, color) {
+        category.style.backgroundColor = color;
+      }
+
+      function deleteTodoItem(btn) {
+        const todoItem = btn.parentNode;
+        todoItem.parentNode.removeChild(todoItem);
+      }
+
+      function deleteCategory(btn) {
+        const category = btn.parentNode;
+        category.parentNode.removeChild(category);
+      }
+    </script>
+  </body>
+</html>

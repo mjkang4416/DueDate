@@ -1,0 +1,173 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+}
+.calendar-container {
+  display: flex;
+  justify-content: space-between;
+}
+.date {
+  display: none;
+}
+.calendar {
+  width: 1000px; /* 최대 가로 크기 설정 */
+  border-collapse: collapse;
+  margin-right: 20px;
+  font-size: 18px; /* 폰트 크기 설정 */
+}
+.calendar th,
+.calendar td {
+  width: 80px;
+  height: 60px;
+  padding: 20px;
+  text-align: center;
+}
+.calendar th {
+  background-color: #f2f2f2;
+}
+.calendar td {
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+}
+.calendar .current-month {
+  background-color: #f0f8ff;
+}
+.calendar .other-month {
+  color: #aaa;
+}
+.mini-calendar td {
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+}
+.mini-calendar .mini-active-date::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.calendar .active-date::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.todo-list {
+}
+.todo-list h2 {
+  text-align: center;
+}
+.todo-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+.todo-list li {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.todo-list li:last-child {
+  margin-bottom: 0;
+}
+.add-todo {
+  margin-top: 20px;
+  display: flex;
+}
+.add-todo input[type="text"] {
+  flex: 1;
+  padding: 8px;
+}
+.add-todo button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.add-todo button:hover {
+  background-color: #0056b3;
+}
+/* 색상 선택 드롭다운 스타일 */
+.color-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.color-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.color-dropdown-content button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.color-dropdown-content button:hover {
+  border: 2px solid black;
+}
+.color-dropdown:hover .color-dropdown-content {
+  display: block;
+}
+/* 테마 컬러 버튼 스타일 */
+.theme-color-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-left: 10px;
+}
+.theme-color-btn:hover {
+  background-color: #0056b3;
+}
+.mini-calendar {
+  margin-top: 20px;
+  width: 300px; /* 미니 캘린더의 가로 크기 */
+  border-collapse: collapse;
+  font-size: 14px; /* 폰트 크기 설정 */
+}
+.mini-calendar th,
+.mini-calendar td {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+}
+.mini-calendar th {
+  background-color: #f2f2f2;
+}
+.mini-calendar .other-month {
+  color: #aaa;
+}
+.mini-calendar .current-date {
+  background-color: #f0f8ff;
+}
