@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/writedPage.css">
+    <script defer src="../js/writedPage.js"></script>
 </head>
 <body>
     <header>헤더입니다.</header>
@@ -25,11 +26,14 @@
                     </div>
                     <div class="alter-box">
                         <div class="correction">
-                            <div>수정하기</div>
+                            <a href="../html/wirte.html">
+                            <div class="su">수정하기</div>
+                            </a>
                             <hr>
-                            <div>삭제하기</div>
+                            <div class="su erase">삭제하기</div>
                         </div>
                     </div>
+                    
                     <h2>제목</h2>
                     <div class="data">
                     내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ
@@ -60,29 +64,51 @@
                     <div>
                         <article>
                             <div class="comment-main">
-                                <div>
-                                    <img src="../img/profile_img.png" class="userImg"></img>
-                                    <div class="nic">닉네임</div>
+                                <div class="comment-box">
+                                    <div class="nic-box">
+                                        <div id="img">
+                                        <img src="../img/profile_img.png" class="userImg"></img>
+                                        </div>
+                                        <div class="nic">닉네임</div>
+                                       
+                                    </div>
+                                    <div class="comm-content">
+                                        <input type="text" class="com-su">
+                                        
+                                    </div>
+                                    <div class="comm-content1">내용</div>
+                                    <div class="alt">
+                                    <div class="alter-box">
+                                        <div class="correction">
+                                           <div class="su bu2">수정하기</div>
+                                           <hr>
+                                           <div class="su er">삭제하기</div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="h">
+                                        <div class="alter-box">
+                                            <div class="correction">
+                                            <div class="su hak">확인</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                <div class="comment-bar">
-                                        <button class="dok">
-                                            <img src="../img/---.png">
-                                        </button>
-                                </div>
-                               
-                                 <div class="alter-box">
-                                     <div class="correction">
-                                        <div>수정하기</div>
-                                        <hr>
-                                        <div>삭제하기</div>
-                                     </div>
-                                 </div>
+                                 
                             </div>
                         </article>
                     </div>
                 </div>
             </div>
             </div>
+            
+    </div>
+    <div class="modal" >
+        <div class="modal_body">
+            <p>정말 삭제하시겠습니까?</p>
+            <button class="btn-ok">확인</button>
+            <button class="btn-no">취소</button>
         </div>
     </div>
     <footer>푸터입니다.</footer>
