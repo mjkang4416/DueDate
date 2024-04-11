@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./diarypage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script defer src="./diarypage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>Diary</title>
 </head>
 <body>
@@ -29,6 +30,7 @@
                             <div class="left leftCalendarMonth">
                                 <p class="leftCurrent-date"></p>
                                 <button id="prev" class="btn leftButton material-symbols-outlined"> chevron_left </button>
+                                <input type="button" id="leftGoToday" class="btn leftTodayButton " value="today">
                                 <button id="next" class="btn leftButton material-symbols-outlined"> chevron_right </button>
                             </div>
                         </div>
@@ -50,21 +52,21 @@
                     <div class="leftNavWrapDiarylist">
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo diaryEmo"><p>이모이모</p></button><!-- 이모티콘 -->
+                                <button id="diaryEmo" class="btn leftDiaryEmo diaryEmo"><p>이모티콘</p></button><!-- 이모티콘 -->
                             </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>이모이모 자리엔 일기장에서 작성한 이모티콘이 들어갈 예정입니다</p></div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>이모티콘 자리엔 일기장에서 작성한 이모티콘이 들어갈 예정입니다</p></div>
                         </div>
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
+                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모티ㅏ콘</p></button>
                             </div>
                             <div id="diaryDetail" class="leftDiaryDetail"><p>이곳은 지금까지 작성한 일기들을 사이드바에서 작게 확인할 수 있습니다 </p></div>
                         </div>
                         <div class="leftNavWrapDiary">
                             <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모이모</p></button>
+                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모티콘</p></button>
                             </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>디비연동이 필요해보여 임시로 작성해 놓았습니다 작은달력과 큰달력 연동은 백단기간에 진행하도록 하겠습니다</p></div>
+                            <div id="diaryDetail" class="leftDiaryDetail"><p>디비연동이 필요해보여 임시로 작성해 놓았습니다 연동은 백단기간에 진행하도록 하겠습니다</p></div>
                         </div>
                     </div>
                 </div>
@@ -74,12 +76,13 @@
             <div class="rightSectionrWrap">
                 <div class="diaryTopWrap">
                     <div class="diaryOrCalendar" style="display: none;">✨일기장🎉</div> <!-- style="display: none;" -->
-                    
-                        <div class="rightCalendarMonth" >
-                            <button id="prev" class="btn rightButton material-symbols-outlined"> chevron_left </button>
-                            <p class="current-date"></p>
-                            <button id="next" class="btn rightButton material-symbols-outlined"> chevron_right </button>
-                        </div>
+
+                    <div class="rightCalendarMonth" >
+                        <div class="todayBtn-div"><input type="button" id="rightGoToday" class="btn rightTodayButton" value="today"></div>
+                        <button id="prev" class="btn rightButton material-symbols-outlined"> chevron_left </button>
+                        <p class="current-date"></p>
+                        <button id="next" class="btn rightButton material-symbols-outlined"> chevron_right </button>
+                    </div>
                     <div class="diaryTopBtnWrap">
                         <div class="writeDiarybtn">
                             <button id="showDiary" class="diarybtn material-symbols-outlined">two_pager</button>
@@ -114,7 +117,7 @@
                             <div class="myDiaryTop">
                                 <div class="myDiaryDateWrap">
                                     <div>날짜 :</div>
-                                    <input type="date" class="myDiaryDate">
+                                    <input type="date" class="myDiaryDate" >
                                 </div>
                                 <div class="myDiaryEmoWrap">
                                     <select name="날씨" id="diaryEmo" class="rightDiaryEmo">
