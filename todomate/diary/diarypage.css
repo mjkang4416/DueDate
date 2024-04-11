@@ -78,8 +78,26 @@ header{
   justify-content: space-between;
   position: absolute;
   width: 30rem;
-  font-size: 2rem;
   font-weight: 500;
+}
+
+.current-date{
+  font-size: 2rem;
+}
+
+.rightTodayButton{
+  border: 1px solid black;
+  border-radius: 15%;
+  outline: none;
+  background-color: transparent;
+  padding: .3rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.rightTodayButton:hover{
+  color: #fff;
+  background-color: #aaa;
 }
 
 .rightCalendardate{
@@ -119,6 +137,7 @@ header{
   position: relative;
   border-bottom: 1px solid #aaa;
   border-left: 1px solid #aaa;
+  cursor: pointer;
 }
 
 .rightCalendardate .days div:last-child{
@@ -314,6 +333,21 @@ header{
 .leftCalender .leftCalendarMonth .leftCurrent-date{
   font-size: 24px;
   font-weight: 600;
+}
+
+.leftTodayButton{
+  border: 1px solid black;
+  border-radius: 15%;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: .2rem;
+  font-weight: 600;
+}
+
+.leftTodayButton:hover{
+  color: #fff;
+  background-color: #aaa;
 }
 
 .leftCalendardate ul{
