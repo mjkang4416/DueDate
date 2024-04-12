@@ -1,6 +1,7 @@
 const title = document.querySelector('.t');
 const data = document.querySelector('.data');
 const submit = document.querySelector('.submit');
+const  pluseImg = document.querySelector('.im');
 
 function click(){
     if(title.value == ''){
@@ -12,4 +13,3 @@ function click(){
 };
 
 
-submit.addEventListener("click",click);
