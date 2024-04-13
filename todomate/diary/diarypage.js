@@ -30,6 +30,13 @@ const daysTag = document.querySelector(".days");
 const prevNextBtn = document.querySelectorAll(".rightCalendarMonth button");
 const rightGoToday = document.querySelector(".rightTodayButton");
 
+const selectDateNgo = document.querySelector("#datepicker");
+
+
+
+
+
+
 
 const renderCalendar = () => {
   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
@@ -39,7 +46,7 @@ const renderCalendar = () => {
   let divLiTag = "";
 
   for (let i = firstDayofMonth; i > 0; i--) {
-    divLiTag += `<div id="dayOf${lastDateofLastMonth - i + 1}" class="day">
+    divLiTag += `<div>
         <li class="inactive">${lastDateofLastMonth - i + 1}</li>
       </div>`;
   }
@@ -47,7 +54,7 @@ const renderCalendar = () => {
   for (let i = 1; i <= lastDateofMonth; i++){
     let isToday = i === date.getDate() && currMonth === new Date().getMonth()
                   && currYear === new Date().getFullYear() ? "active" : "";
-    divLiTag += `<div id="dayOf${i}" class="day"><li class="${isToday}">${i}</li></div>`;
+    divLiTag += `<div id="dayOf${i}" class="day" onclick=selectDay(${i})><li class="${isToday}">${i}</li><span class="newDiaryEmo${i}"></span></div>`;
   }
 
   for (let i = lastDayofMonth; i < 6; i++) {
@@ -55,6 +62,7 @@ const renderCalendar = () => {
         <li class="inactive">${i - lastDayofMonth + 1}</li>
       </div>`;
   }
+  
 
   currentDate.innerText = `${months[currMonth]}🚓${+currYear}`;
   daysTag.innerHTML = divLiTag;
@@ -82,6 +90,9 @@ rightGoToday.addEventListener("click", () =>{
   currMonth = date.getMonth();
   renderCalendar();
 });
+
+
+
 
 
 
@@ -162,76 +173,107 @@ const diaryCalender = document.querySelector(".diaryCalender");
 
 
 showDiary.addEventListener('click', function (){
-  if(diaryTitle.style.display=='none' && myDiary.style.display=='none'){
-    diaryTitle.style.display = '';
+  if(myDiary.style.display=='none'){
     myDiary.style.display = '';
-    rightCalendarMonth.style.display = 'none';
     diaryCalender.style.display = 'none';
 
   }
 });
 
 showCalendarbtn.addEventListener('click', function(){
-  if(rightCalendarMonth.style.display == 'none' && diaryCalender.style.display == 'none'){
-    diaryTitle.style.display = 'none';
+  if(diaryCalender.style.display == 'none'){
     myDiary.style.display = 'none';
-    rightCalendarMonth.style.display = '';
     diaryCalender.style.display = '';
   }
 });
 // ----------------------------------------------------------------------------------------------------------------------------------------
 
 //-------------------------------------------------큰 달력의 날짜 클릭 시 해당 날짜 가지고 일기장으로 넘기기------------------------------------------
-const selectDays = document.querySelectorAll(".day");
 
-const dateControl = document.querySelector('input[type="date"]');
+// 큰달력 div에 onclick으로 넣음
+function selectDay(day){
+  selectDate = currYear+"-"+(currMonth+1)+"-"+day;
+  selectDateNgo.value = selectDate;
+  if(myDiary.style.display=='none'){
+    myDiary.style.display = '';
+    diaryCalender.style.display = 'none';
 
-dateControl.value = `${currYear}-0${currMonth+1}-${date.getDate()}`;
+  }
+  // console.log(selectDate);
+};
 
 
-selectDays.forEach(sdays =>{
-  sdays.addEventListener("click", () => {
-    console.log("클릭됨");
-      
-  });
-});
+
+
 
 // -----------------------------------------------------------------------------------------------------------------------------------
 // 일기장 유효성 검사
 const writeDiaryForm = document.querySelector('.writeDiaryForm');
 
-const myDiaryDate = document.querySelector('.myDiaryDate').value;
-const rightDiaryEmo = document.querySelector('.rightDiaryEmo').value;
-const myDiaryTitle = document.querySelector('.myDiaryTitle').value;
-const myDiaryDetail = document.querySelector('myDiaryDetail');
+const myDiaryDate = document.querySelector('#datepicker');
+const rightDiaryEmo = document.querySelector('.rightDiaryEmo');
+const myDiaryTitle = document.querySelector('.myDiaryTitle');
+const myDiaryDetail = document.querySelector('.myDiaryDetail');
 
 const submitBtn = document.querySelector('.submit-button');
 const cancel = document.querySelector('#cancel');
 
-// var datatimeRegexp = /^(19|20)\d{2}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[0-1])$/;
 
-// if ( !datatimeRegexp.test($('#diarydate').value()) ) {
-    // alert("날짜는 yyyy-mm-dd 형식으로 입력해주세요.");
-    // return false;
-// }
 
-//※※※※※※※※※※※※※※※※※※※※※※※※※※수정필요
 submitBtn.addEventListener('click', () =>{
-  if(myDiaryDate.trim() == ""){
+  if(myDiaryDate.value == ""){
     alert("날짜를 작성해 주세요");
-  }else if(myDiaryTitle.trim().length == 0){
+  }else if(myDiaryTitle.value == ""){
     alert("제목을 작성해 주세요")
-  }else if( myDiaryDetail.value.trim() == ""){
+  }else if(myDiaryDetail.value == ""){
     alert("일기 내용을 작성해 주세요");
   }else{
     alert("작성 완료");
-    //DB연동 필요
+    /*다이어리 데이트 벨류와 달력의 날짜가 같으면
+    dayOf${o}아이디에 class="day ${haveDiary}" 추가
+    li태그 뒤에 <span>${rightDiaryEmo.value}</span> 추가*/
+    // alert(rightDiaryEmo.value);
+
+
+    //달력이동 또는 투데이 버튼 클릭 또는 일기장에서 날짜선택 시 작동 이상 수정 필요
+    const newDiaryEmo = document.querySelectorAll(".days span");
+    const dayof = document.querySelectorAll(".day");
+    const leftCalDiarychk = document.querySelectorAll(".leftDays li")
+
+    const chkDiary = () => {
+      for (let k = 1; k <= 31; k++) {
+        if(myDiaryDate.value == currYear+"-"+(currMonth+1)+"-"+k){
+          dayof[k-1].className = 'day haveDiary';
+          newDiaryEmo[k-1].innerText= rightDiaryEmo.value;
+          leftCalDiarychk[k].className = "haveDiaryL";
+        }else{
+        }
+        // renderCalendar();
+      } 
+    }
+    chkDiary();
+    writeDiaryForm.reset();
+    
+    
+    
+
+    // daysTag.innerHTML = `<span>😊</span>`;
+    // let divEmoTag = 
+    // console.log(rightDiaryEmo.value);
+    // if(myDiaryDate.value === df){
+    // }; 
+    //작성 완료 시 일기장 
+    //1 .DB연동
+    //2. 날짜랑 이모티코 가지고 큰달력으로 넘어가서 달력 위에 뿌리기
   }
 });
-//※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
-
 
 cancel.addEventListener('click', () =>{
   alert("일기장 작성 취소");
   writeDiaryForm.reset();
 });
+
+
+
+  
+
