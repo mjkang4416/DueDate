@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskpage</title>
+    <link rel="stylesheet" href="taskpage.css">
+    <script defer src="taskpage.js"></script>
+</head>
+<body>
+    <div id="modal1" class="modal">
+        <div class="modal_body">
+            <div class="box_header_text">
+                <div class="modal_box_title_wrap">
+                    <img class="main_box_img" src="../img/goal_img.png">
+                    <p class="main_box_text">목표</p>
+                </div>
+                <img id="close_modal1" class="close_modal" src="../img/close_img.png">
+            </div>
+            <hr class="modal_hr">
+            <ul class="checklist">
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 1</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 2</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 3</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 4</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal_body">
+            <div class="box_header_text">
+                <div class="modal_box_title_wrap">
+                    <img class="main_box_img" src="../img/task2_img.png">
+                    <p class="main_box_text">과제</p>
+                </div>
+                <img id="close_modal2" class="close_modal" src="../img/close_img.png">
+            </div>
+            <hr class="modal_hr">
+            <ul class="checklist">
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 1</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 2</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 3</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 4</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal_body">
+            <div class="box_header_text">
+                <div class="modal_box_title_wrap">
+                    <img class="main_box_img" src="../img/todo_img.png">
+                    <p class="main_box_text">할일</p>
+                </div>
+                <img id="close_modal3" class="close_modal" src="../img/close_img.png">
+            </div>
+            <hr class="modal_hr">
+            <ul class="checklist">
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 1</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 2</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 3</li>
+                </div>
+                <br>
+                <div class="li_wrap">
+                    <button type="button" class="checklist_btn"></button>
+                    <li class="checklist_item">체크리스트 항목 4</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="title_wrap">
+            <h1 class="title">TASK</h1>
+        </div>
+        <div class="main_wrap">
+            <div class="main">
+                <div class="main_box_wrap">
+                    <div class="main_box">
+                        <div class="main_box_title_wrap">
+                            <img id="goal_img" class="main_box_img" src="../img/goal_img.png">
+                            <p id="goal_text" class="main_box_text">목표</p>
+                        </div>
+                        <hr>
+                        <div class="main_box_gauge_wrap">
+                            <p id="goal_gauge_percentage" class="gauge_percentage">0%</p>
+                            <div id="goal_gauge_bar_warp" class="gauge_bar_wrap">
+                                <div id="goal_gauge_background" class="gauge_background"></div>
+                                <div id="goal_gauge_bar" class="gauge_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_box_wrap">
+                    <div class="main_box">
+                        <div class="main_box_title_wrap">
+                            <img id="task_img" class="main_box_img" src="../img/task2_img.png">
+                            <p id="task_text" class="main_box_text">과제</p>
+                        </div>
+                        <hr>
+                        <div class="main_box_gauge_wrap">
+                            <p id="task_gauge_percentage" class="gauge_percentage">0%</p>
+                            <div id="task_gauge_bar_warp" class="gauge_bar_wrap">
+                                <div id="task_gauge_background" class="gauge_background"></div>
+                                <div id="task_gauge_bar" class="gauge_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_box_wrap">
+                    <div class="main_box">
+                        <div class="main_box_title_wrap">
+                            <img id="todo_img" class="main_box_img" src="../img/todo_img.png">
+                            <p id="todo_text" class="main_box_text">할일</p>
+                        </div>
+                        <hr>
+                        <div class="main_box_gauge_wrap">
+                            <p id="todo_gauge_percentage" class="gauge_percentage">0%</p>
+                            <div id="todo_gauge_bar_warp" class="gauge_bar_wrap">
+                                <div id="todo_gauge_background" class="gauge_background"></div>
+                                <div id="todo_gauge_bar" class="gauge_bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

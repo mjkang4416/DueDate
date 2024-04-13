@@ -9,8 +9,8 @@ const photoImg = document.getElementById('modal_photo');
 const name1 = document.getElementById('modal_Id');
 const email = document.getElementById('modal_email');
 const nickname = document.getElementById('modal_nickname');
+const profileImg = document.getElementById("profile_img");
 
-const profileImg = document.getElementById('profile_img');
 const profileName = document.getElementById('profile_name');
 const profileEmail = document.getElementById('profile_email');
 const profileNickname = document.getElementById('profile_nickname');
@@ -18,13 +18,16 @@ const profileNickname = document.getElementById('profile_nickname');
 const checkModal = document.getElementById('modal_check');
 const cancelModal = document.getElementById('modal_cancel');
 
+let isModalOpen = false;
 
 openModal.addEventListener("click", ()=> {
+    isModalOpen = true;
     modal.style.display="flex";
     originProfile();
 });
 
 closeModal.addEventListener("click", ()=> {
+    isModalOpen = false;
     modal.style.display="none";
 });
 
@@ -74,3 +77,16 @@ function originProfile() {
     email.value = profileEmail.innerText.split(' : ')[1].trim();
     nickname.value = profileNickname.innerText.split(' : ')[1].trim();
 }
+
+window.addEventListener("keydown", function(event) {
+    if (event.key === "Escape" && isModalOpen) {
+        modal.style.display = "none";
+        isModalOpen = false;
+    }
+});
+
+profileImg.addEventListener("click", () => {
+    isModalOpen = true;
+    modal.style.display="flex";
+    originProfile();
+});

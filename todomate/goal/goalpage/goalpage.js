@@ -19,9 +19,49 @@ increaseBtn.addEventListener('click', () => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const progressBar = document.querySelector('.bar');
-    const percentageText = document.querySelector('.percentage');
-    const increaseButton = document.querySelector('.increaseButton');
+    const progressBar = document.querySelector('#goal_bar');
+    const percentageText = document.querySelector('#goal_percentage');
+    const increaseButton = document.querySelector('#goal_increase');
+
+    let percentage = 0;
+
+    function updateProgressBar() {
+        progressBar.style.width = percentage + '%';
+        percentageText.textContent = percentage + '%';
+    }
+
+    increaseButton.addEventListener('click', function() {
+        if (percentage < 100) {
+            percentage += 10; // 상승할 값
+            updateProgressBar();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBar = document.querySelector('#project_bar');
+    const percentageText = document.querySelector('#project_percentage');
+    const increaseButton = document.querySelector('#project_increase');
+
+    let percentage = 0;
+
+    function updateProgressBar() {
+        progressBar.style.width = percentage + '%';
+        percentageText.textContent = percentage + '%';
+    }
+
+    increaseButton.addEventListener('click', function() {
+        if (percentage < 100) {
+            percentage += 10; // 상승할 값
+            updateProgressBar();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const progressBar = document.querySelector('#task_bar');
+    const percentageText = document.querySelector('#task_percentage');
+    const increaseButton = document.querySelector('#task_increase');
 
     let percentage = 0;
 
