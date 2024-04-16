@@ -3,426 +3,204 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
-    <title>DueDate</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script defer src="./js/main.js"></script>
+    <title>Due date</title>
   </head>
   <body>
-    <div class="mini-calendar" id="mini-calendar">
-      <h2>Mini Calendar</h2>
-      <button id="mini-prev-month-btn">&lt;</button>
-      <h2 id="mini-current-month"></h2>
-      <button id="mini-next-month-btn">&gt;</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-        </thead>
-        <tbody id="mini-calendar-body"></tbody>
-      </table>
-    </div>
-    <div class="calendar-container" id="calendar-container">
-      <div class="todo-list" id="todo-list">
-        <h2>Todo List</h2>
-        <ul id="todo-items"></ul>
-        <div class="add-todo">
-          <input class="date" type="date" id="date" required />
-          <input type="text" id="todo" placeholder="Enter todo" required />
-          <input
-            type="text"
-            id="category-name"
-            placeholder="Category Name"
-            required
-          />
-          <!-- 카테고리 이름 입력 필드 추가 -->
-          <div class="color-dropdown">
-            <button id="theme-color-btn" class="theme-color-btn">▼</button>
-            <div class="color-dropdown-content">
+    <div id="app">
+      <div class="header">
+        <div class="left-header">
+          <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="logo-wrap">
+            <a href="./mainpage.html">
+              <img class="logo" src="./img/logo.png" />
+            </a>
+          </div>
+        </div>
+        <div class="center-header">
+          <nav>
+            <ul>
+              <li><a href="./mainpage.html" class="active-menu">Task</a></li>
+              <li>
+                <a href="../diary/diarypage.html" class="none-acitve">Diary</a>
+              </li>
+              <li>
+                <a
+                  href="../community/html/communitypage.html"
+                  class="none-acitve"
+                  >Community</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="right-menu">
+          <button class="mypage-btn">
+            <img src="./img/account.png" />
+          </button>
+        </div>
+        <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+          <button class="close-btn" id="close-btn">×</button>
+          <div class="mypage-menu">
+            <img src="img/change.png" />
+          </div>
+          <div class="user-wrap">
+            <div class="user-email">email@email.com</div>
+            <div class="user-nick-name">유저 닉네임</div>
+          </div>
+          <div class="mypage-link-wrap">
+            <a href="../goal/goalpage/goalpage.html" class="goal-page"
+              ><img />Goal Page
+            </a>
+            <a href="../login/loginpage.html" class="log-out"> Log Out</a>
+          </div>
+        </div>
+      </div>
+      <div class="left-menu" id="leftMenu">
+        <div class="leftNavWrapCalendar">
+          <!--  -->
+          <div class="leftCalender">
+            <div class="left leftCalendarMonth">
+              <p class="leftCurrent-date"></p>
               <button
-                class="color-button"
-                data-color="red"
-                style="background-color: red"
-              ></button>
+                id="prev"
+                class="btn leftButton material-symbols-outlined"
+              >
+                chevron_left
+              </button>
               <button
-                class="color-button"
-                data-color="blue"
-                style="background-color: blue"
-              ></button>
-              <button
-                class="color-button"
-                data-color="green"
-                style="background-color: green"
-              ></button>
-              <button
-                class="color-button"
-                data-color="black"
-                style="background-color: black"
-              ></button>
-              <button
-                class="color-button"
-                data-color="purple"
-                style="background-color: purple"
-              ></button>
-              <button
-                class="color-button"
-                data-color="orange"
-                style="background-color: orange"
-              ></button>
+                id="next"
+                class="btn leftButton material-symbols-outlined"
+              >
+                chevron_right
+              </button>
             </div>
           </div>
-          <button id="add-btn">Add Todo</button>
+          <div class="leftCalendardate">
+            <ul class="leftDays"></ul>
+          </div>
+        </div>
+        <div class="todo-list-wrap">
+          <div class="tune-wrap">
+            <button>
+              <a href="../goal/goalpage/goalpage.html"
+                ><img src="./img/tune.png"
+              /></a>
+            </button>
+          </div>
+          <div class="todo-list">
+            <div class="category" id="category1">
+              <div>
+                <input class="category-name" placeholder="목표 설정" />
+              </div>
+              <div class="add-todo-wrap">
+                <button class="add-todo" onclick="addNewTodoList(event)">
+                  <img src="./img/add.png" />
+                </button>
+              </div>
+              <div class="send-wrap">
+                <button class="send">
+                  <img src="./img/send.png" />
+                </button>
+              </div>
+            </div>
+            <div class="check-todo-wrap"></div>
+          </div>
+          <div class="todo-list">
+            <div class="category" id="category2">
+              <div>
+                <input class="category-name" placeholder="목표 설정" />
+              </div>
+              <div class="add-todo-wrap">
+                <button class="add-todo" onclick="addNewTodoList(event)">
+                  <img src="./img/add.png" />
+                </button>
+              </div>
+              <div class="send-wrap">
+                <button class="send">
+                  <img src="./img/send.png" />
+                </button>
+              </div>
+            </div>
+            <div class="check-todo-wrap"></div>
+          </div>
+          <div class="todo-list">
+            <div class="category" id="category3">
+              <div>
+                <input class="category-name" placeholder="목표 설정" />
+              </div>
+              <div class="add-todo-wrap">
+                <button class="add-todo" onclick="addNewTodoList(event)">
+                  <img src="./img/add.png" />
+                </button>
+              </div>
+              <div class="send-wrap">
+                <button class="send">
+                  <img src="./img/send.png" />
+                </button>
+              </div>
+            </div>
+            <div class="check-todo-wrap"></div>
+          </div>
         </div>
       </div>
-      <div class="calendar" id="calendar">
-        <div id="calendar-header">
-          <button id="prev-month-btn">&lt;</button>
-          <h2 id="current-month"></h2>
-          <button id="next-month-btn">&gt;</button>
+      <div class="main-clandar">
+        <div class="diarySection">
+          <!-- 일기장 || 큰달력 -->
+          <div class="rightSectionrWrap">
+            <div class="diaryTopWrap">
+              <div class="rightCalendarMonth">
+                <button
+                  id="prev"
+                  class="btn rightButton material-symbols-outlined"
+                >
+                  chevron_left
+                </button>
+                <p class="current-date"></p>
+                <button
+                  id="next"
+                  class="btn rightButton material-symbols-outlined"
+                >
+                  chevron_right
+                </button>
+              </div>
+            </div>
+            <!-- 큰달력 -->
+            <section class="diaryCalender">
+              <div class="rightCalender">
+                <div class="rightCalendardate">
+                  <ul class="weeks">
+                    <div><li>Sun</li></div>
+                    <div><li>Mon</li></div>
+                    <div><li>Tue</li></div>
+                    <div><li>Wed</li></div>
+                    <div><li>Thu</li></div>
+                    <div><li>Fri</li></div>
+                    <div><li>Sat</li></div>
+                  </ul>
+                  <ul class="days"></ul>
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th>Sat</th>
-            </tr>
-          </thead>
-          <tbody id="calendar-body"></tbody>
-        </table>
       </div>
     </div>
-
-    <script>
-      // 초기 설정
-      let currentMonth = new Date().getMonth();
-      let currentYear = new Date().getFullYear();
-      let todoList = [];
-      let selectedColor = "red"; // 기본 테마 컬러는 빨간색
-
-      // 페이지 로드 후 실행
-      window.onload = function () {
-        renderCalendar(currentYear, currentMonth);
-        renderTodoList();
-        renderMiniCalendar(currentYear, currentMonth);
-        // 이전 달 버튼에 클릭 이벤트 추가
-        document
-          .getElementById("prev-month-btn")
-          .addEventListener("click", function () {
-            currentMonth--;
-            if (currentMonth < 1) {
-              currentMonth = 12;
-              currentYear--;
-            }
-            renderCalendar(currentYear, currentMonth);
-            renderMiniCalendar(currentYear, currentMonth);
-          });
-
-        // 다음 달 버튼에 클릭 이벤트 추가
-        document
-          .getElementById("next-month-btn")
-          .addEventListener("click", function () {
-            currentMonth++;
-            if (currentMonth > 12) {
-              currentMonth = 1;
-              currentYear++;
-            }
-            renderCalendar(currentYear, currentMonth);
-            renderMiniCalendar(currentYear, currentMonth);
-          });
-
-        // 할일 추가 버튼에 클릭 이벤트 추가
-        document
-          .getElementById("add-btn")
-          .addEventListener("click", function () {
-            const date = document.getElementById("date").value;
-            const todo = document.getElementById("todo").value;
-            const categoryName = document.getElementById("category-name").value; // 카테고리 이름 가져오기
-            addTodoToList(date, todo, categoryName, selectedColor); // 카테고리 이름과 컬러 정보 추가
-            document.getElementById("date").value = "";
-            document.getElementById("todo").value = "";
-            document.getElementById("category-name").value = ""; // 카테고리 입력 필드 초기화
-          });
-
-        // 테마 컬러 버튼에 클릭 이벤트 추가
-        document
-          .getElementById("theme-color-btn")
-          .addEventListener("click", function () {
-            const dropdown = document.querySelector(".color-dropdown-content");
-            dropdown.style.display =
-              dropdown.style.display === "none" ? "block" : "none";
-          });
-
-        // 컬러 버튼에 클릭 이벤트 추가
-        const colorButtons = document.querySelectorAll(".color-button");
-        colorButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const color = button.dataset.color;
-            selectedColor = color; // 선택된 컬러를 설정
-            document.getElementById("theme-color-btn").style.backgroundColor =
-              color; // 테마 컬러 버튼 색상 변경
-            const dropdown = document.querySelector(".color-dropdown-content");
-            dropdown.style.display = "none"; // 드롭다운 숨기기
-          });
-        });
-        // 미니 캘린더를 렌더링하는 함수
-        function renderMiniCalendar(year, month) {
-          const miniCalendarBody =
-            document.getElementById("mini-calendar-body");
-          miniCalendarBody.innerHTML = ""; // 기존의 내용 초기화
-
-          const firstDayOfMonth = new Date(year, month, 1).getDay();
-          const daysInMonth = new Date(year, month + 1, 0).getDate();
-          const daysInPrevMonth = new Date(year, month, 0).getDate();
-          // 미니캘린더 이전 달 버튼에 클릭 이벤트 추가
-          document
-            .getElementById("mini-prev-month-btn")
-            .addEventListener("click", function () {
-              currentMonth--;
-              if (currentMonth < 1) {
-                currentMonth = 12;
-                currentYear--;
-              }
-              renderCalendar(currentYear, currentMonth);
-              renderMiniCalendar(currentYear, currentMonth);
-            });
-
-          // 미니캘린더 다음 달 버튼에 클릭 이벤트 추가
-          document
-            .getElementById("mini-next-month-btn")
-            .addEventListener("click", function () {
-              currentMonth++;
-              if (currentMonth > 12) {
-                currentMonth = 1;
-                currentYear++;
-              }
-              renderCalendar(currentYear, currentMonth);
-              renderMiniCalendar(currentYear, currentMonth);
-            });
-          // 이번 달 첫째 주 시작 요일
-          const startDay = daysInPrevMonth - firstDayOfMonth;
-
-          // 미니 캘린더에 날짜 추가
-          let date = 1;
-          for (let i = 0; i < 6; i++) {
-            const weekRow = miniCalendarBody.insertRow();
-            for (let j = 0; j < 7; j++) {
-              const cell = weekRow.insertCell();
-              if (i === 0 && j < firstDayOfMonth) {
-                const prevMonthDay = daysInPrevMonth - firstDayOfMonth + j + 1;
-                cell.textContent = prevMonthDay;
-                cell.classList.add("other-month");
-              } else if (date > daysInMonth) {
-                const nextMonthDay = date - daysInMonth;
-                cell.textContent = nextMonthDay;
-                cell.classList.add("other-month");
-                date++;
-              } else {
-                // 이번 달의 날짜
-                cell.textContent = date;
-                if (
-                  date === new Date().getDate() &&
-                  year === new Date().getFullYear() &&
-                  month === new Date().getMonth()
-                ) {
-                  cell.classList.add("current-month");
-                }
-                date++;
-              }
-            }
-          }
-        }
-        // 미니 캘린더 셀에 클릭 이벤트 추가
-        document
-          .getElementById("mini-calendar-body")
-          .addEventListener("click", function (event) {
-            const cell = event.target;
-            const allCells = document.querySelectorAll(
-              "#mini-calendar-body td"
-            );
-            allCells.forEach((cell) =>
-              cell.classList.remove("mini-active-date")
-            );
-            if (cell.tagName === "TD" && cell.textContent.trim() !== "") {
-              const selectedDate = new Date(
-                currentYear,
-                currentMonth,
-                parseInt(cell.textContent)
-              );
-              selectedDate.setDate(selectedDate.getDate());
-              const formattedDate = selectedDate.toISOString().split("T")[0];
-              document.getElementById("date").value = formattedDate;
-              renderTodoList(selectedDate);
-              cell.classList.add("mini-active-date");
-            } // 클릭된 셀에 active-date 클래스 추가
-          });
-      };
-
-      // 달력을 렌더링하는 함수
-      function renderCalendar(year, month) {
-        const calendarBody = document.getElementById("calendar-body");
-        calendarBody.innerHTML = ""; // 기존의 내용 초기화
-
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
-        const firstDayOfMonth = new Date(year, month, 1).getDay();
-        const daysInPrevMonth = new Date(year, month, 0).getDate();
-
-        const months = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-
-        // 현재 월과 년도 표시
-        document.getElementById("current-month").textContent =
-          months[month] + " " + year;
-        document.getElementById("mini-current-month").textContent =
-          months[month] + " " + year;
-        // 이번 달 날짜 추가
-        let date = 1;
-        for (let i = 0; i < 6; i++) {
-          const weekRow = calendarBody.insertRow();
-          for (let j = 0; j < 7; j++) {
-            const cell = weekRow.insertCell();
-            if (i === 0 && j < firstDayOfMonth) {
-              // 이번 달이 시작되기 전의 날짜
-              const prevMonthDay = daysInPrevMonth - firstDayOfMonth + j + 1;
-              cell.textContent = prevMonthDay;
-              cell.classList.add("other-month");
-            } else if (date > daysInMonth) {
-              // 이번 달이 끝난 후의 날짜
-              const nextMonthDay = date - daysInMonth;
-              cell.textContent = nextMonthDay;
-              cell.classList.add("other-month");
-              date++;
-            } else {
-              // 이번 달의 날짜
-              cell.textContent = date;
-              if (
-                date === new Date().getDate() &&
-                year === new Date().getFullYear() &&
-                month === new Date().getMonth()
-              ) {
-                cell.classList.add("current-month");
-              }
-              date++;
-            }
-          }
-        }
-      }
-
-      // 달력 셀에 클릭 이벤트 추가
-      document
-        .getElementById("calendar-body")
-        .addEventListener("click", function (event) {
-          const cell = event.target;
-          const allCells = document.querySelectorAll("#calendar-body td");
-          allCells.forEach((cell) => cell.classList.remove("active-date"));
-          if (cell.tagName === "TD" && cell.textContent.trim() !== "") {
-            const selectedDate = new Date(
-              currentYear,
-              currentMonth,
-              parseInt(cell.textContent)
-            );
-            selectedDate.setDate(selectedDate.getDate());
-            const formattedDate = selectedDate.toISOString().split("T")[0];
-            document.getElementById("date").value = formattedDate;
-            renderTodoList(selectedDate);
-            cell.classList.add("active-date"); // 클릭된 셀에 active-date 클래스 추가
-          }
-        });
-
-      // 할일 목록을 렌더링하는 함수
-      function renderTodoList(selectedDate) {
-        const todoItems = document.getElementById("todo-items");
-        todoItems.innerHTML = "";
-
-        // 선택한 날짜의 할일 목록을 가져옴
-        const filteredList = todoList.filter((item) => {
-          return item.date === selectedDate.toISOString().split("T")[0];
-        });
-
-        // 선택한 날짜의 할일 목록 렌더링
-        filteredList.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.categoryName}:  ${item.todo}`; // 카테고리 이름 추가
-          li.style.backgroundColor = item.color; // 배경색 변경
-          todoItems.appendChild(li);
-        });
-      }
-
-      // 할일을 추가하는 함수
-      function addTodoToList(date, todo, categoryName, color) {
-        todoList.push({
-          date: date,
-          todo: todo,
-          categoryName: categoryName,
-          color: color,
-        }); // 카테고리 정보 추가
-        renderTodoList(new Date(date));
-      }
-      // 할일을 추가하는 함수
-      function addTodoToList(date, todo, categoryName, color) {
-        todoList.push({
-          date: date,
-          todo: todo,
-          categoryName: categoryName,
-          color: color,
-        }); // 할일 목록에 항목 추가
-
-        // 추가된 할일이 속하는 날짜의 달력 셀을 찾아서 스타일을 변경하여 표시
-        const calendarCells = document.querySelectorAll("#calendar-body td");
-        calendarCells.forEach((cell) => {
-          const cellDate = new Date(
-            currentYear,
-            currentMonth,
-            parseInt(cell.textContent)
-          )
-            .toISOString()
-            .split("T")[0];
-          if (cellDate === date) {
-            const todoItemDiv = document.createElement("div");
-            todoItemDiv.style.backgroundColor = color;
-            todoItemDiv.classList.add("todo-item");
-            todoItemDiv.style.width = "100%";
-            todoItemDiv.style.border = "3px solid white"; // 흰색 테두리 추가
-
-            const categoryNameSpan = document.createElement("span");
-            categoryNameSpan.textContent = categoryName;
-            categoryNameSpan.style.display = "block";
-            categoryNameSpan.style.fontSize = "12px";
-            categoryNameSpan.style.fontWeight = "bold";
-            categoryNameSpan.style.color = "white";
-            categoryNameSpan.style.overflow = "hidden";
-            categoryNameSpan.style.textOverflow = "ellipsis"; // 너무 길어지면 생략 부호로 표시
-            categoryNameSpan.style.whiteSpace = "nowrap";
-            todoItemDiv.appendChild(categoryNameSpan); // span을 div에 추가
-
-            cell.appendChild(todoItemDiv); // div를 셀에 추가
-          }
-        });
-
-        // 할일 목록을 다시 렌더링하여 갱신된 목록을 표시
-        renderTodoList(new Date(date));
-      }
-    </script>
   </body>
 </html>
