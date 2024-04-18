@@ -3,210 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./goalpage.css">
-    <script defer src="./goalpage.js"></script>
+    <title>taskpage</title>
+    <link rel="stylesheet" href="goalpage.css">
+    <script defer src="goalpage.js"></script>
 </head>
 <body>
     <main>
-        <div id="main_header">
-            <div id="main_header_wrap">
-                <img id="minus" class="main_header_img" src="../img/minus_img.png">
-                <h1 id="main_header_num">3</h1>
-                <img id="plus" class="main_header_img" src="../img/plus_img.png">
+        <div class="box_title_wrap">
+            <div claas="h1_wrap">
+                <h1 class="task_h1">GOALPAGE</h1>
             </div>
         </div>
-        <div id="main_body">
-            <div id="main_body_left">
-                <div id="main_body_task">
-                    <a href="goalpage.html"><img id="task_img" src="../img/Task_img.png"></a>
-                    <div id="task_box_wrap">
-                        <div id="task_box">
-                            <div id="task_box_header">
-                                <p id="task_deadline_text">Deadline</p>
-                                <p id="task_progress_text">Progress</p>
+        <div class="main_wrap">
+            <div class="main">
+                <a href="../taskpage/taskpage.html">
+                    <div class="main_box_wrap">
+                        <div class="main_box">
+                            <div class="main_box_title_wrap">
+                                <p class="main_box_title">TaskPage</p>
+                                <img class="arrow_img" src="../img/arrow.png">
                             </div>
-                            <div id="task_box_one" class="task_box_div">
-                                <div id="task_box_first_box_wrap" class="task_box_in_box_wrap">
-                                    <div id="task_box_first_box" class="task_box_in_box">
-                                        <img id="blue_dot" class="dot" src="../img/blue_dot_img.png">
-                                        <p id="task_box_first_text" class="task_box_in_text">목표</p>
-                                    </div>
-                                </div>
-                                <div class="gauge">
-                                    <div id="goal_bar" class="bar"></div>
-                                    <div id="goal_percentage" class="percentage">0%</div>
-                                    <button id="goal_increase" class="increaseButton">Increase</button>
-                                </div>
-                            </div>
-                            <div id="task_box_goal" class="task_box_div">
-                                <div id="task_box_goal_first" class="task_box_first">
-                                    <ul id="task_box_goal_ul" class="task_box_ul">
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">매일 아침 달리기</p>
-                                                <p class="goal_li_deadline">24.03.23</p>
-                                            </div>
-                                        </li>
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">매일 팔굽혀펴기 하기</p>
-                                                <p class="goal_li_deadline">24.03.27</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="task_box_two" class="task_box_div">
-                                <div id="task_box_second_box_wrap" class="task_box_in_box_wrap">
-                                    <div id="task_box_second_box" class="task_box_in_box">
-                                        <img id="green_dot" class="dot" src="../img/green_dot_img.png">
-                                        <p id="task_box_second_text" class="task_box_in_text">목표</p>
-                                    </div>
-                                </div>
-                                <div class="gauge">
-                                    <div id="project_bar" class="bar"></div>
-                                    <div id="project_percentage" class="percentage">0%</div>
-                                    <button id="project_increase" class="increaseButton">Increase</button>
-                                </div>
-                            </div>
-                            <div id="task_box_project" class="task_box_div">
-                                <div id="task_box_project_first" class="task_box_first">
-                                    <ul id="task_box_project_ul" class="task_box_ul">
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">c언어 2장 연습문제</p>
-                                                <p class="goal_li_deadline">24.03.29</p>
-                                            </div>
-                                        </li>
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">프레임워크 프로그래밍 과제</p>
-                                                <p class="goal_li_deadline">24.03.22</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div id="task_box_three" class="task_box_div">
-                                <div id="task_box_third_box_wrap" class="task_box_in_box_wrap">
-                                    <div id="task_box_third_box" class="task_box_in_box">
-                                        <img id="purple_dot" class="dot" src="../img/purple_dot_img.png">
-                                        <p id="task_box_third_text" class="task_box_in_text">목표</p>
-                                    </div>
-                                </div>
-                                <div class="gauge">
-                                    <div id="task_bar" class="bar"></div>
-                                    <div id="task_percentage" class="percentage">0%</div>
-                                    <button id="task_increase" class="increaseButton">Increase</button>
-                                </div>
-                            </div>
-                            <div id="task_box_task" class="task_box_div">
-                                <div id="task_box_task_first" class="task_box_first">
-                                    <ul id="task_box_task_ul" class="task_box_ul">
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">c언어 2장 연습문제</p>
-                                                <p class="goal_li_deadline">24.03.29</p>
-                                            </div>
-                                        </li>
-                                        <li class="task_box_li">
-                                            <div class="li_inner_wrap">
-                                                <p class="goal_li_goal">프레임워크 프로그래밍 과제</p>
-                                                <p class="goal_li_deadline">24.03.22</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <hr>
+                            <div class="main_box_body_wrap">
+                                <img id="go_task" class="main_box_body_img" src="../img/go_task.png">
+                                <p class="main_box_body">테스크 페이지로 이동하기</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="main_div_diary">
-                    <a id="diary_a" href="../diarylistpage/diarylistpage.html"><img id="diary_img" src="../img/Diary_img.png"></a>
-                    <div id="diary_box_wrap">
-                        <div id="diary_box">
-                            <div id="diary_box_goal" class="diary_box_div">
-                                <div class="diary_box_first">
-                                    <ul class="diary_box_ul">
-                                        <a href="" class="li_a"><li class="diary_box_li">
-                                            <div class="diary_li_inner_wrap">
-                                                <p class="diary_li_title">매일 아침 달리기</p>
-                                                <p class="diary_li_date">24.03.23</p>
-                                            </div>
-                                        </li></a>
-                                        <a href="" class="li_a"><li class="diary_box_li" id="diary_box_li2">
-                                            <div class="diary_li_inner_wrap">
-                                                <p class="diary_li_title">매일 팔굽혀펴기 하기</p>
-                                                <p class="diary_li_date">24.03.27</p>
-                                            </div>
-                                        </li></a>
-                                    </ul>
-                                </div>
+                </a>
+                <a href="../diarylistpage/diarylistpage.html">
+                    <div class="main_box_wrap">
+                        <div class="main_box">
+                            <div class="main_box_title_wrap">
+                                <p class="main_box_title">DiaryPage</p>
+                                <img class="arrow_img" src="../img/arrow.png">
+                            </div>
+                            <hr>
+                            <div class="main_box_body_wrap">
+                                <img id="go_diary" class="main_box_body_img" src="../img/go_diary.png">
+                                <p class="main_box_body">일기 페이지로 이동하기</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div id="main_body_right">
-                <div id="main_body_write">
-                    <a id="write_a" href="../articlelistpage/articlelistpage.html"><img id="write_img" src="../img/write_img.png"></a>
-                    <div id="write_box_wrap">
-                        <div id="write_box">
-                            <div id="write_box_1" class="write_box_div">
-                                <div class="write_box_first">
-                                    <ul class="write_box_ul">
-                                        <li id="li_header">
-                                            <p id="li_title">제목</p>
-                                            <p id="li_date">작성일</p>
-                                            <p id="li_views">조회수</p>
-                                        </li>
-                                        <hr>
-                                        <a href="" class="li_aa"><li class="write_box_li">
-                                            <div class="write_li_inner_wrap">
-                                                <p class="write_li_title">안녕하세요</p>
-                                                <p class="write_li_date">24.03.23</p>
-                                                <p class="write_li_views">13</p>
-                                            </div>
-                                        </li></a>
-                                        <br>
-                                        <a href="" class="li_aa"><li class="write_box_li" id="write_box_li2">
-                                            <div class="write_li_inner_wrap">
-                                                <p class="write_li_title">여기 뭐하는 곳이에요?</p>
-                                                <p class="write_li_date">24.03.27</p>
-                                                <p class="write_li_views">11</p>
-                                            </div>
-                                        </li></a>
-                                        <br>
-                                        <a href="" class="li_aa"><li class="write_box_li" id="write_box_li2">
-                                            <div class="write_li_inner_wrap">
-                                                <p class="write_li_title">오늘 운이 좀 좋네요</p>
-                                                <p class="write_li_date">24.03.29</p>
-                                                <p class="write_li_views">19</p>
-                                            </div>
-                                        </li></a>
-                                        <br>
-                                        <a href="" class="li_aa"><li class="write_box_li" id="write_box_li2">
-                                            <div class="write_li_inner_wrap">
-                                                <p class="write_li_title">오늘 밥 뭐먹을까요</p>
-                                                <p class="write_li_date">24.04.01</p>
-                                                <p class="write_li_views">24</p>
-                                            </div>
-                                        </li></a>
-                                        <br>
-                                        <a href="" class="li_aa"><li class="write_box_li" id="write_box_li2">
-                                            <div class="write_li_inner_wrap">
-                                                <p class="write_li_title">졸린데 할게 너무 많네요</p>
-                                                <p class="write_li_date">24.04.02</p>
-                                                <p class="write_li_views">9</p>
-                                            </div>
-                                        </li></a>
-                                    </ul>
-                                </div>
+                </a>
+                <a href="../articlelistpage/articlelistpage.html">
+                    <div class="main_box_wrap">
+                        <div class="main_box">
+                            <div class="main_box_title_wrap">
+                                <p class="main_box_title">ArticlePage</p>
+                                <img class="arrow_img" src="../img/arrow.png">
+                            </div>
+                            <hr>
+                            <div class="main_box_body_wrap">
+                                <img id="go_article" class="main_box_body_img" src="../img/go_article.png">
+                                <p class="main_box_body">내가 쓴글 확인하러 가기</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </main>
