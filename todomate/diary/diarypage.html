@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./diarypage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <script defer src="./diarypage.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <title>Diary</title>
 </head>
 <body>
@@ -129,7 +129,7 @@
                                     <div>날짜 :</div>
                                     <!-- <input type="text" class="myDiaryDateText"> 
                                     <input type="date" class="myDiaryDate" > -->
-                                    <input type="text" id="datepicker" width="30%"  required/>
+                                    <input type="text" id="datepicker" width="30%" readonly required/>
                                 </div>
                                 <div class="myDiaryEmoWrap">
                                     <select name="날씨" id="diaryEmo" class="rightDiaryEmo">
@@ -166,14 +166,14 @@
     $('#datepicker').datepicker({ format: 'yyyy-mm-dd',maxDate:today,showOtherMonths: true });
 </script>
 
-<script>
+<!-- <script>
 $(document).ready( function() {
 
     $("#header").load("./header.html");  // 원하는 파일 경로를 삽입하면 된다
     // $("#footers").load("common/footer.html");  // 추가 인클루드를 원할 경우 이런식으로 추가하면 된다
     
     });
-</script>
+</script> -->
     
     
     

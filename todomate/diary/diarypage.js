@@ -51,10 +51,13 @@ const renderCalendar = () => {
       </div>`;
   }
 
+
+
   for (let i = 1; i <= lastDateofMonth; i++){
     let isToday = i === date.getDate() && currMonth === new Date().getMonth()
                   && currYear === new Date().getFullYear() ? "active" : "";
     divLiTag += `<div id="dayOf${i}" class="day" onclick=selectDay(${i})><li class="${isToday}">${i}</li><span class="newDiaryEmo${i}"></span></div>`;
+
   }
 
   for (let i = lastDayofMonth; i < 6; i++) {
@@ -98,66 +101,7 @@ rightGoToday.addEventListener("click", () =>{
 
 //-------------------------------------------------------------------------------------------------------------------------------------
 
-//-------------------------------------------------------- 작은 달력 -------------------------------------------------------------------
 
-const leftCurrentDate = document.querySelector('.leftCurrent-date');
-const leftDaysTag = document.querySelector(".leftDays");
-const leftPrevNextBtn = document.querySelectorAll(".leftCalendarMonth button");
-const leftGoToday = document.querySelector(".leftTodayButton");
-
-const renderLeftCalendar = () => {
-  let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
-  let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
-  let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
-  let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
-  let liTag = '';
-
-  for (let i = firstDayofMonth; i > 0; i--) {
-    liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
-  }
-
-  for (let i = 1; i <= lastDateofMonth; i++){
-    let isToday = i === date.getDate() && currMonth === new Date().getMonth()
-                  && currYear === new Date().getFullYear() ? "leftActive" : "";
-    liTag += `<li class="${isToday}">${i}</li>`;
-  }
-
-  for (let i = lastDayofMonth; i < 6; i++) {
-    liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
-  }
-
-  leftCurrentDate.innerText = `${currYear}🍔0${currMonth +1}`;
-  leftDaysTag.innerHTML = liTag;
-}
-renderLeftCalendar();
-
-leftPrevNextBtn.forEach(lbtn => {
-  lbtn.addEventListener("click", () =>{
-    currMonth = lbtn.id === "prev" ? currMonth -1 : currMonth + 1;
-
-    if(currMonth < 0 || currMonth > 11){
-      date = new Date(currYear, currMonth);
-      currYear = date.getFullYear();
-      currMonth = date.getMonth();
-    }else{
-      date = new Date();
-    }
-    renderLeftCalendar();
-  });
-});
-
-leftGoToday.addEventListener("click", () =>{
-  date = new Date();
-  currYear = date.getFullYear();
-  currMonth = date.getMonth();
-  renderLeftCalendar();
-});
-
-
-
-
-
-// ------------------------------------------------------------------------------------------------------------------------------------
 
 
 // ----------------------------------------------- 일기장 || 캘린더 버튼 클릭 시---------------------------------------------------------
@@ -192,14 +136,22 @@ showCalendarbtn.addEventListener('click', function(){
 
 // 큰달력 div에 onclick으로 넣음
 function selectDay(day){
-  selectDate = currYear+"-"+(currMonth+1)+"-"+day;
-  selectDateNgo.value = selectDate;
-  if(myDiary.style.display=='none'){
-    myDiary.style.display = '';
-    diaryCalender.style.display = 'none';
-
+  let selectDate = currYear+"-"+(currMonth+1)+"-"+day;
+  for (let i = 1; i <= 31; i++) {
+    // console.log(selectDate);
+    if(selectDate <= currYear+"-"+(date.getMonth()+1)+"-"+date.getDate()){
+        selectDateNgo.value = selectDate;
+        if(myDiary.style.display=='none'){
+          myDiary.style.display = '';
+          diaryCalender.style.display = 'none';
+        }
+      }else{
+        alert("오늘까지의 일기를 작성해 주세요");
+        break;
+      // myDiary.style.display = 'none';
+      // diaryCalender.style.display = '';
+    }
   }
-  // console.log(selectDate);
 };
 
 
@@ -238,14 +190,13 @@ submitBtn.addEventListener('click', () =>{
     //달력이동 또는 투데이 버튼 클릭 또는 일기장에서 날짜선택 시 작동 이상 수정 필요
     const newDiaryEmo = document.querySelectorAll(".days span");
     const dayof = document.querySelectorAll(".day");
-    const leftCalDiarychk = document.querySelectorAll(".leftDays li")
+    // const leftCalDiarychk = document.querySelectorAll(".leftDays li")
 
     const chkDiary = () => {
       for (let k = 1; k <= 31; k++) {
-        if(myDiaryDate.value == currYear+"-"+(currMonth+1)+"-"+k){
+        if(myDiaryDate.value === date.getFullYear()+"-"+(currMonth+1)+"-"+k){
           dayof[k-1].className = 'day haveDiary';
           newDiaryEmo[k-1].innerText= rightDiaryEmo.value;
-          leftCalDiarychk[k].className = "haveDiaryL";
         }else{
         }
         // renderCalendar();
@@ -277,3 +228,63 @@ cancel.addEventListener('click', () =>{
 
   
 
+//-------------------------------------------------------- 작은 달력 -------------------------------------------------------------------
+
+// const leftCurrentDate = document.querySelector('.leftCurrent-date');
+// const leftDaysTag = document.querySelector(".leftDays");
+// const leftPrevNextBtn = document.querySelectorAll(".leftCalendarMonth button");
+// const leftGoToday = document.querySelector(".leftTodayButton");
+
+// const renderLeftCalendar = () => {
+//   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay();
+//   let lastDateofMonth = new Date(currYear, currMonth + 1,0).getDate();
+//   let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+//   let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate();
+//   let liTag = '';
+
+//   for (let i = firstDayofMonth; i > 0; i--) {
+//     liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+//   }
+
+//   for (let i = 1; i <= lastDateofMonth; i++){
+//     let isToday = i === date.getDate() && currMonth === new Date().getMonth()
+//                   && currYear === new Date().getFullYear() ? "leftActive" : "";
+//     liTag += `<li class="${isToday}">${i}</li>`;
+//   }
+
+//   for (let i = lastDayofMonth; i < 6; i++) {
+//     liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+//   }
+
+//   leftCurrentDate.innerText = `${currYear}🍔0${currMonth +1}`;
+//   leftDaysTag.innerHTML = liTag;
+// }
+// renderLeftCalendar();
+
+// leftPrevNextBtn.forEach(lbtn => {
+//   lbtn.addEventListener("click", () =>{
+//     currMonth = lbtn.id === "prev" ? currMonth -1 : currMonth + 1;
+
+//     if(currMonth < 0 || currMonth > 11){
+//       date = new Date(currYear, currMonth);
+//       currYear = date.getFullYear();
+//       currMonth = date.getMonth();
+//     }else{
+//       date = new Date();
+//     }
+//     renderLeftCalendar();
+//   });
+// });
+
+// leftGoToday.addEventListener("click", () =>{
+//   date = new Date();
+//   currYear = date.getFullYear();
+//   currMonth = date.getMonth();
+//   renderLeftCalendar();
+// });
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
