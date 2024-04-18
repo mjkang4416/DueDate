@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 #modal{
     position:absolute;
     display:none;
@@ -93,7 +97,13 @@
 
 
 .box_title_wrap_wrap {
-    margin: 0 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#box_title_wrap_wrap {
+    width: 63%;
 }
 
 
@@ -200,16 +210,26 @@
     display: flex;
 }
 
+.minus_plus_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #minus {
     margin-right: 20px;
+    width: 35px;
+    height: 35px;
 }
 
 #plus {
     margin-left: 20px;
+    width: 35px;
+    height: 35px;
 }
 
 #main_header_num {
-    font-size: 40px;
+    font-size: 28px;
     line-height: 10px;
 }
 

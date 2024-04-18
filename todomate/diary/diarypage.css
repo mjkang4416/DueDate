@@ -21,17 +21,17 @@ button {
   cursor: pointer;
 }
 
+header{
+height: 36px;
+border: 1px solid black;
+}
+
 .material-symbols-outlined{
   font-size: 30px !important;
 }
 
 .rightSectionrWrap .material-symbols-outlined{
   font-size: 48px !important;
-}
-
-header{
-  height: 36px;
-  border: 1px solid black;
 }
 
 .diarySection{
@@ -143,7 +143,7 @@ header{
   position: relative;
   border-bottom: 1px solid #aaa;
   border-left: 1px solid #aaa;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .rightCalendardate .days div:last-child{
@@ -175,9 +175,10 @@ header{
 }
 
 .day span{
-  display: inline-block;
+  display: block;
   font-size: 2rem;
   float: right;
+  margin-top:41%
 }
 
 /* -------------------------------------------------------------------------------------------------------------------- */
@@ -319,18 +320,48 @@ header{
   /* border: 1px solid black; */
 }
 
+/* left diaryList */
+.leftNavWrapDiary{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 10px;
+}
+
+.leftNavWrapDiary:hover{
+  box-shadow: 0 0 20px #aaa;
+}
+
+.leftDiaryTitle{
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftDiaryDetail{
+  margin-top: .5rem;
+  height: 5rem;
+  text-align: center;
+  overflow: hidden;
+  word-break: break-word;
+  font-size: 1.1rem;
+    
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical
+}
 
 /* leftCalendar */
+/*
 .leftNavWrapCalendar{
   width: 100%;
   height: 30%;
 }
 
 .leftCalender{
-  /* width: 80%; */
+
   background: #fff;
   border-radius: 10px;
-  /* padding: 25px; */
+
 }
 
 .leftCalendarMonth{
@@ -406,39 +437,5 @@ header{
   background-color: rgb(195, 255, 209);
   border-radius: .3rem;
 }
-
-
-
-/* left diaryList */
-
-.leftNavWrapDiary{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  border-radius: 10px;
-}
-
-.leftNavWrapDiary:hover{
-  box-shadow: 0 0 20px #aaa;
-}
-
-.leftDiaryTitle{
-  height: 2rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.leftDiaryDetail{
-  margin-top: .5rem;
-  height: 5rem;
-  text-align: center;
-  overflow: hidden;
-  word-break: break-word;
-  font-size: 1.1rem;
-    
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical
-}
-
-
+*/
 
