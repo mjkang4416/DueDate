@@ -90,3 +90,28 @@ profileImg.addEventListener("click", () => {
     modal.style.display="flex";
     originProfile();
 });
+
+
+
+function validateForm() {
+    let valid = true;
+    const password = document.getElementById('passwd_input').value;
+    const confirmPassword = document.getElementById('passwd_check').value;
+
+    if (password.length < 6) {
+        document.getElementById('passwordError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('passwordError').style.display = 'none';
+    }
+    if (password !== confirmPassword) {
+        document.getElementById('confirmPasswordError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('confirmPasswordError').style.display = 'none';
+    }
+    if (valid) {
+        alert('비밀번호 변경 성공!');
+    }
+    return valid;
+}

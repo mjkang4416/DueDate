@@ -1,7 +1,3 @@
-body {
-    overflow: hidden;
-}
-
 img {
     cursor: pointer;
 }
@@ -23,7 +19,7 @@ a {
 
 
 .modal{
-    position:absolute;
+    position:fixed;
     display:none;
 
     justify-content: center;
