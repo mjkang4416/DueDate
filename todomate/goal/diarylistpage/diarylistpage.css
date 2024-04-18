@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 #modal{
     position:absolute;
     display:none;
@@ -88,6 +92,21 @@
 
 
 
+#div_diary {
+    margin: 0 250px;
+    padding: 0;
+}
+
+#diary_box_wrap_wrap {
+    display: flex;
+}
+
+#diary_box_wrap {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+}
+
 .box_title_wrap {
     display: flex;
     justify-content: space-between;
@@ -107,25 +126,30 @@
     margin-left: 100%;
 }
 
-#div_diary {
-    margin: 0 250px;
-    padding: 0;
-}
-
 #month_wrap {
     display: flex;
 }
 
+.minus_plus_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #minus {
     margin-right: 20px;
+    width: 35px;
+    height: 35px;
 }
 
 #plus {
     margin-left: 20px;
+    width: 35px;
+    height: 35px;
 }
 
 #main_header_num {
-    font-size: 40px;
+    font-size: 28px;
     line-height: 10px;
 }
 
@@ -139,15 +163,6 @@
     width: 120px;
     height: 60px;
     cursor: pointer;
-}
-
-#diary_box_wrap_wrap {
-    display: flex;
-}
-
-#diary_box_wrap {
-    width: 100%;
-    padding: 0 20px;
 }
 
 .diary_box_div {
