@@ -1,9 +1,5 @@
-body {
-    overflow: hidden;
-}
-
 #modal{
-    position:absolute;
+    position:fixed;
     display:none;
     
     justify-content: center;
