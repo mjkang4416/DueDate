@@ -83,7 +83,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  /* font: inherit; */
   vertical-align: baseline;
 }
 button {
@@ -93,7 +93,7 @@ button {
   margin: 0;
   cursor: pointer;
 }
-article,
+/* article,
 aside,
 details,
 figcaption,
@@ -105,42 +105,45 @@ menu,
 nav,
 section {
   display: block;
-}
-body {
+} */
+/* body {
   line-height: 1;
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
-}
+} */
 ol,
 ul {
   list-style: none;
 }
-blockquote,
+/* blockquote,
 q {
   quotes: none;
-}
-blockquote:before,
+} */
+/* blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: "";
   content: none;
-}
-table {
+} */
+/* table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-input {
+} */
+/* input {
+  border: none;
+  background-color: transparent;
+} */
+
+.todo-list input{
   border: none;
   background-color: transparent;
 }
-input[type="checkbox"] {
+input[type="checkbox"]&:checked {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   border: 1px solid#000;
-  &:checked {
-    background-color: #000; /* 체크됐을 때 배경색을 변경합니다. */
-  }
+  background-color: #000; /* 체크됐을 때 배경색을 변경합니다. */
 }
 a {
   text-decoration: none;
@@ -224,7 +227,7 @@ a {
 .center-header nav ul {
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
+  font-weight: 800;
 }
 .center-header nav ul li {
   margin-right: 24px;
