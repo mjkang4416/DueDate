@@ -20,11 +20,6 @@ button {
   cursor: pointer;
 }
 
-header {
-  height: 36px;
-  border: 1px solid black;
-}
-
 .material-symbols-outlined {
   font-size: 30px !important;
 }
@@ -309,7 +304,7 @@ header {
 
 /*  */
 .leftHamburger {
-  margin-top: 28px;
+  margin-top: 0;
   margin-left: 0;
   width: 360px;
   height: 100vh;
@@ -444,21 +439,34 @@ header {
   border-radius: .3rem;
 }
 */
+
+
 /* 투두리스트 */
 .todo-list {
   margin-top: 10px;
 }
-.tune-wrap {
+
+.todo-header{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+
+/* .tune-wrap {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-right: 4px;
   margin: 16px 0;
-}
-.tune-wrap img {
+} */
+
+/* .tune-wrap img {
   width: 40px;
   height: 40px;
-}
+} */
+
+
 .datepicker-todo {
   margin-bottom: 24px;
 }
@@ -504,9 +512,6 @@ header {
   color: #fff;
 }
 
-.check-todo-wrap {
-}
-
 .rotate {
   transform: rotate(180deg); /* 이미지 회전 */
 }
@@ -536,10 +541,10 @@ header {
   justify-content: center;
 }
 .add-todo {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   width: 24px;
   height: 24px;
-  border: 1px solid#000;
+  /* border: 1px solid#000; */
   display: flex;
   justify-content: center;
   align-items: center;
