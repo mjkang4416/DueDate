@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var password = document.getElementById("password").value;
 
         if(email === "test@gmail.com" && password === "1234") {
-            window.location.href = "../main/mainpage.html";
+            window.location.href = "../diary/diarypage.html";
         } else {
             alert("이메일 또는 비밀번호가 틀렸습니다!.");
         }

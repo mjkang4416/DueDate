@@ -203,4 +203,39 @@ button{
     padding: 20px;
 }
 
+.mypage-link-wrap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 0 40px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.mypage-btn img {
+    width: 40px;
+    height: 40px;
+}
+  .mypage-menu-wrap {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 40px;
+    width: 288px;
+    background-color: #b0b0b0;
+    border-radius: 8px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .mypage-menu-wrap.active-page {
+    display: block;
+  }
+  .mypage-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
 
