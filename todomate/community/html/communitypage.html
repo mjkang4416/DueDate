@@ -6,7 +6,8 @@
     <title>community</title>
     <link rel="stylesheet" href="../css/community.css">
     <link rel="stylesheet" href="../../diary/css/common.css">
-      <style>
+    <script src="../js/communitypage.js"></script>
+    <style>
         @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
       </style>
       <link
@@ -15,13 +16,49 @@
       />
 </head>
 <body>
-    <header>
-        header
-    </header>
+    <header id="app-header">
+        <div class="header">
+          <div class="left-header">
+            <div class="hamburger-menu" id="hamburgerMenu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+            <div class="logo-wrap">
+              <a href="../../diary/diarypage.html"> <img class="logo" src="../logo.png" /></a>
+            </div>
+          </div>
+          <div class="center-header">
+            <nav>
+              <ul>
+                <li><a href="../../diary/diarypage.html" class="none-acitve">Diary</a></li>
+                <li><a href="../../goal/goalpage/goalpage.html" class="none-acitve">Goal</a></li>
+                <li><a href="../html/communitypage.html" class="active-menu">Community</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="right-menu">
+            <button class="mypage-btn">
+              <img src="../account.png" />
+            </button>
+          </div>
+          <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+            <button class="close-btn" id="close-btn">×</button>
+            <div class="mypage-menu">
+              <img src="img/change.png" />
+            </div>
+            <div class="user-wrap">
+              <div class="user-email">email@email.com</div>
+              <div class="user-nick-name">유저 닉네임</div>
+            </div>
+            <div class="mypage-link-wrap">
+              <a href="../goal/goalpage/goalpage.html" class="goal-page"><img />Goal Page</a>
+              <a href="../login/loginpage.html" class="log-out"> Log Out</a>
+            </div>
+          </div>
+        </div>
+      </header>
        <div class="main-text">
-        <div>
-        community
-         </div>
         </div>
             <div class="allbox">
                 <div class="write-button">
@@ -122,8 +159,6 @@
                     <div class="box"><a class="diary_order_a" href=""><li class="diary_order">8</li></a></div>
                 </ul>
             </div>
-     
-       <footer>footer</footer>
     </div>
 </body>
 </html>
