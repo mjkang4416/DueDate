@@ -1,10 +1,10 @@
 // 햄버거 메뉴---------------
-const hamburgerMenu = document.getElementById("hamburgerMenu");
-const leftMenu = document.getElementById("leftMenu");
+// const hamburgerMenu = document.getElementById("hamburgerMenu");
+// const leftMenu = document.getElementById("leftMenu");
 
-hamburgerMenu.addEventListener("click", () => {
-  leftMenu.classList.toggle("show-menu");
-});
+// hamburgerMenu.addEventListener("click", () => {
+//   leftMenu.classList.toggle("show-menu");
+// });
 
 // mypage menu--------------------
 document.querySelector(".mypage-btn").addEventListener("click", function () {

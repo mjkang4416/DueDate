@@ -1,35 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="diarylistpage.css">
+    <link rel="stylesheet" href="diarylistpage.css" />
     <script defer src="diarylistpage.js"></script>
-</head>
-<body>
-    <div id="modal">
-        <div id="modal_body">
-            <div id="modal_body_header" class="box_header_text">
-                <img id="close_modal" src="../img/close_img.png">
-            </div>
-            <hr>
-            <div id="modal_body_main">
-                <div id="modal_box_wrap">
-                    <div id="modal_box">
-                        <p id="box_title"></p>
-                    </div>
-                </div>
-                <div id="modal_box2_wrap">
-                    <div id="modal_box2">
-                        <span id="box_text"></span>
-                    </div>
-                </div>
-            </div>
+    <link rel="stylesheet" href="../../header/common.css" />
+    <script defer src="../../header/header.js"></script>
+  </head>
+  <body>
+    <header id="app-header">
+      <div class="header">
+        <div class="left-header">
+          <div class="logo-wrap">
+            <a href="./mainpage.html">
+              <img class="logo" src="../../header/img/logo.png"
+            /></a>
+          </div>
         </div>
+        <div class="center-header">
+          <nav>
+            <ul>
+              <li>
+                <a href="../../diary/diarypage.html" class="none-acitve"
+                  >Diary</a
+                >
+              </li>
+              <li>
+                <a href="../../goal/goalpage/goalpage.html" class="active-menu"
+                  >MyDuedate</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../../community/html/communitypage.html"
+                  class="none-acitve"
+                  >Community</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="right-menu">
+          <button class="mypage-btn">
+            <img src="../../header/img/account.png" />
+          </button>
+        </div>
+        <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+          <button class="close-btn" id="close-btn">×</button>
+          <div class="mypage-menu">
+            <img src="../../header/img/change.png" />
+          </div>
+          <div class="user-wrap">
+            <div class="user-email">email@email.com</div>
+            <div class="user-nick-name">유저 닉네임</div>
+          </div>
+          <div class="mypage-link-wrap">
+            <a href="../../goal/goalpage/goalpage.html" class="goal-page"
+              ><img />Goal Page</a
+            >
+            <a href="../../login/loginpage.html" class="log-out"> Log Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="modal">
+      <div id="modal_body">
+        <div id="modal_body_header" class="box_header_text">
+          <img id="close_modal" src="../img/close_img.png" />
+        </div>
+        <hr />
+        <div id="modal_body_main">
+          <div id="modal_box_wrap">
+            <div id="modal_box">
+              <p id="box_title"></p>
+            </div>
+          </div>
+          <div id="modal_box2_wrap">
+            <div id="modal_box2">
+              <span id="box_text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="div_diary">
-        <!-- <div id="diary_header">
+      <!-- <div id="diary_header">
             <a id="diary_a" href="../diarylistpage/diarylistpage.html"><img id="diary_img" src="../img/diary2_img.png"></a>
             <div id="month_wrap">
                 <img id="minus" class="main_header_img" src="../img/minus_img.png">
@@ -37,96 +94,122 @@
                 <img id="plus" class="main_header_img" src="../img/plus_img.png">
             </div>
         </div> -->
-        <div id="diary_box_wrap_wrap">
-            <div id="diary_box_wrap">
-                <div class="box_title_wrap">
-                    <div class="box_work"></div>
-                    <div claas="h1_wrap">
-                        <h1 class="diary_h1">Diary</h1>
-                    </div>
-                    <div id="month_wrap">
-                        <div class="minus_plus_wrap">
-                            <img id="minus" class="main_header_img" src="../img/minus_img.png">
-                        </div>
-                        <h2 id="main_header_num">3</h2>
-                        <div class="minus_plus_wrap">
-                            <img id="plus" class="main_header_img" src="../img/plus_img.png">
-                        </div>
-                    </div>
-                </div>
-                <div class="link_wrap">
-                    <div class="link">
-                        <div class="a_wrap">
-                            <a class="link_a" href="../taskpage/taskpage.html">task</a>
-                            <a class="link_a" href="../articlelistpage/articlelistpage.html">article</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="diary_box_goal" class="diary_box_div">
-                    <div class="diary_box_first">
-                        <ul class="diary_box_ul">
-                            <li class="diary_box_li">
-                                <div class="diary_li_inner_wrap">
-                                    <p class="diary_li_title">푸바오가 집에 갔다</p>
-                                    <p class="diary_li_date">작성일 : 24.03.31</p>
-                                </div>
-                                <hr class="box_hr">
-                                <div class="diary_preview_box_wrap">
-                                    <div class="diary_preview_box">
-                                        <div class="diary_preview_text_wrap">
-                                            <div class="diary_preview_text">첫째줄 내용</div>
-                                            <div class="diary_preview_text">둘째줄 내용</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="diary_box_li" id="diary_box_li2">
-                                <div class="diary_li_inner_wrap">
-                                    <p class="diary_li_title">후배님과 밥약속</p>
-                                    <p class="diary_li_date">작성일 : 24.03.28</p>
-                                </div>
-                                <hr class="box_hr">
-                                <div class="diary_preview_box_wrap">
-                                    <div class="diary_preview_box">
-                                        <div class="diary_preview_text_wrap">
-                                            <div class="diary_preview_text">첫째줄 내용</div>
-                                            <div class="diary_preview_text">둘째줄 내용</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="diary_box_li" id="diary_box_li2">
-                                <div class="diary_li_inner_wrap">
-                                    <p class="diary_li_title">후배님과 밥약속</p>
-                                    <p class="diary_li_date">작성일 : 24.03.28</p>
-                                </div>
-                                <hr class="box_hr">
-                                <div class="diary_preview_box_wrap">
-                                    <div class="diary_preview_box">
-                                        <div class="diary_preview_text_wrap">
-                                            <div class="diary_preview_text">첫째줄 내용</div>
-                                            <div class="diary_preview_text">둘째줄 내용</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+      <div id="diary_box_wrap_wrap">
+        <div id="diary_box_wrap">
+          <div class="box_title_wrap">
+            <div class="box_work"></div>
+            <div claas="h1_wrap">
+              <h1 class="diary_h1">Diary</h1>
             </div>
+            <div id="month_wrap">
+              <div class="minus_plus_wrap">
+                <img
+                  id="minus"
+                  class="main_header_img"
+                  src="../img/minus_img.png"
+                />
+              </div>
+              <h2 id="main_header_num">3</h2>
+              <div class="minus_plus_wrap">
+                <img
+                  id="plus"
+                  class="main_header_img"
+                  src="../img/plus_img.png"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="link_wrap">
+            <div class="link">
+              <div class="a_wrap">
+                <a class="link_a" href="../taskpage/taskpage.html">task</a>
+                <a class="link_a" href="../articlelistpage/articlelistpage.html"
+                  >article</a
+                >
+              </div>
+            </div>
+          </div>
+          <div id="diary_box_goal" class="diary_box_div">
+            <div class="diary_box_first">
+              <ul class="diary_box_ul">
+                <li class="diary_box_li">
+                  <div class="diary_li_inner_wrap">
+                    <p class="diary_li_title">푸바오가 집에 갔다</p>
+                    <p class="diary_li_date">작성일 : 24.03.31</p>
+                  </div>
+                  <hr class="box_hr" />
+                  <div class="diary_preview_box_wrap">
+                    <div class="diary_preview_box">
+                      <div class="diary_preview_text_wrap">
+                        <div class="diary_preview_text">첫째줄 내용</div>
+                        <div class="diary_preview_text">둘째줄 내용</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="diary_box_li" id="diary_box_li2">
+                  <div class="diary_li_inner_wrap">
+                    <p class="diary_li_title">후배님과 밥약속</p>
+                    <p class="diary_li_date">작성일 : 24.03.28</p>
+                  </div>
+                  <hr class="box_hr" />
+                  <div class="diary_preview_box_wrap">
+                    <div class="diary_preview_box">
+                      <div class="diary_preview_text_wrap">
+                        <div class="diary_preview_text">첫째줄 내용</div>
+                        <div class="diary_preview_text">둘째줄 내용</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="diary_box_li" id="diary_box_li2">
+                  <div class="diary_li_inner_wrap">
+                    <p class="diary_li_title">후배님과 밥약속</p>
+                    <p class="diary_li_date">작성일 : 24.03.28</p>
+                  </div>
+                  <hr class="box_hr" />
+                  <div class="diary_preview_box_wrap">
+                    <div class="diary_preview_box">
+                      <div class="diary_preview_text_wrap">
+                        <div class="diary_preview_text">첫째줄 내용</div>
+                        <div class="diary_preview_text">둘째줄 내용</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div id="diary_footer">
-            <ul id="diary_footer_ul">
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">1</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">2</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">3</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">4</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">5</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">6</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">7</li></a></div>
-                <div class="box"><a class="diary_order_a" href=""><li class="diary_order">8</li></a></div>
-            </ul>
-        </div>
+      </div>
+      <div id="diary_footer">
+        <ul id="diary_footer_ul">
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">1</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">2</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">3</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">4</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">5</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">6</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">7</li></a>
+          </div>
+          <div class="box">
+            <a class="diary_order_a" href=""><li class="diary_order">8</li></a>
+          </div>
+        </ul>
+      </div>
     </div>
-</body>
+  </body>
 </html>

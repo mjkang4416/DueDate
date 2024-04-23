@@ -1,112 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>taskpage</title>
-    <link rel="stylesheet" href="goalpage.css">
+    <link rel="stylesheet" href="goalpage.css" />
     <script defer src="goalpage.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../../header/common.css" />
+    <script defer src="../../header/header.js"></script>
     <style>
-        /* 밑줄 제거를 위한 CSS */
-        .gj-datepicker input {
-            border-bottom: none;
-        }
+      /* 밑줄 제거를 위한 CSS */
+      .gj-datepicker input {
+        border-bottom: none;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <script>
-        $(document).ready(function(){
-            var today = new Date();
-            var today1 = today.toLocaleDateString("en-US", {
-            month: '2-digit',
-            day: '2-digit',
-            year: 'numeric'
-            });
-            $('#datepicker').datepicker({
-                value: today1
-            });
+      <script>
+        $(document).ready(function () {
+          var today = new Date();
+          var today1 = today.toLocaleDateString("en-US", {
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+          });
+          $("#datepicker").datepicker({
+            value: today1,
+          });
         });
-        </script>
-        <div class="box_title_wrap">
-            <div claas="h1_wrap">
-                <h1 class="task_h1">MyDuedate</h1>
+      </script>
+      <header id="app-header">
+        <div class="header">
+          <div class="left-header">
+            <div class="logo-wrap">
+              <a href="./mainpage.html">
+                <img class="logo" src="../../header/img/logo.png"
+              /></a>
             </div>
+          </div>
+          <div class="center-header">
+            <nav>
+              <ul>
+                <li>
+                  <a href="../../diary/diarypage.html" class="none-acitve"
+                    >Diary</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../../goal/goalpage/goalpage.html"
+                    class="active-menu"
+                    >MyDuedate</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../../community/html/communitypage.html"
+                    class="none-acitve"
+                    >Community</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="right-menu">
+            <button class="mypage-btn">
+              <img src="../../header/img/account.png" />
+            </button>
+          </div>
+          <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+            <button class="close-btn" id="close-btn">×</button>
+            <div class="mypage-menu">
+              <img src="../../header/img/change.png" />
+            </div>
+            <div class="user-wrap">
+              <div class="user-email">email@email.com</div>
+              <div class="user-nick-name">유저 닉네임</div>
+            </div>
+            <div class="mypage-link-wrap">
+              <a href="../../goal/goalpage/goalpage.html" class="goal-page"
+                ><img />Goal Page</a
+              >
+              <a href="../../login/loginpage.html" class="log-out"> Log Out</a>
+            </div>
+          </div>
         </div>
-        <div class="main_wrap">
-            <div class="date_wrap">
-                <input id="datepicker" width="120px" />
-            </div>
-            <div class="main">
-                <a href="../taskpage/taskpage.html">
-                    <div id="first_box" class="main_box_wrap">
-                        <div class="main_box">
-                            <div class="main_box_title_wrap">
-                                <p class="main_box_title">TaskPage</p>
-                                <img class="arrow_img" src="../img/arrow.png">
-                            </div>
-                            <hr>
-                            <div class="main_box_body_wrap">
-                                <img id="go_task" class="main_box_body_img" src="../img/go_task.png">
-                                <!-- <p class="main_box_body">테스크 페이지로 이동하기</p> -->
-                                <ul class="gauge_ul">
-                                    <li class="gauge_li">목표<progress class="progress" value="20" max="100"></progress></li>
-                                    <li class="gauge_li">과제<progress class="progress" value="30" max="100"></progress></li>
-                                    <li class="gauge_li">할일<progress class="progress" value="50" max="100"></progress></li>
-                                </ul>
-                                <img class="none" src="../img/none.png">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <hr>
-                <a href="../diarylistpage/diarylistpage.html">
-                    <div class="main_box_wrap">
-                        <div class="main_box">
-                            <div class="main_box_title_wrap">
-                                <p class="main_box_title">DiaryPage</p>
-                                <img class="arrow_img" src="../img/arrow.png">
-                            </div>
-                            <hr>
-                            <div class="main_box_body_wrap">
-                                <img id="go_diary" class="main_box_body_img" src="../img/go_diary.png">
-                                <!-- <p class="main_box_body">일기 페이지로 이동하기</p> -->
-                                <ul class="diary_ul">
-                                    <li class="diary_li">후배님과 밥약속</li>
-                                    <li class="diary_li">후배님과 밥약속</li>
-                                    <li class="diary_li">후배님과 밥약속</li>
-                                </ul>
-                                <img class="none" src="../img/none.png">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <hr>
-                <a href="../articlelistpage/articlelistpage.html">
-                    <div class="main_box_wrap">
-                        <div class="main_box">
-                            <div class="main_box_title_wrap">
-                                <p class="main_box_title">ArticlePage</p>
-                                <img class="arrow_img" src="../img/arrow.png">
-                            </div>
-                            <hr>
-                            <div class="main_box_body_wrap">
-                                <img id="go_article" class="main_box_body_img" src="../img/go_article.png">
-                                <!-- <p class="main_box_body">내가 쓴글 확인하러 가기</p> -->
-                                <ul class="diary_ul">
-                                    <!-- <li class="diary_li">후배님과 밥약속</li> -->
-                                    
-                                </ul>
-                                <img class="none" src="../img/none.png">
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+      </header>
+      <div class="box_title_wrap">
+        <div claas="h1_wrap">
+          <h1 class="task_h1">MyDuedate</h1>
         </div>
+      </div>
+      <div class="main_wrap">
+        <div class="date_wrap">
+          <input id="datepicker" width="120px" />
+        </div>
+        <div class="main">
+          <a href="../taskpage/taskpage.html">
+            <div id="first_box" class="main_box_wrap">
+              <div class="main_box">
+                <div class="main_box_title_wrap">
+                  <p class="main_box_title">TaskPage</p>
+                  <img class="arrow_img" src="../img/arrow.png" />
+                </div>
+                <hr />
+                <div class="main_box_body_wrap">
+                  <img
+                    id="go_task"
+                    class="main_box_body_img"
+                    src="../img/go_task.png"
+                  />
+                  <!-- <p class="main_box_body">테스크 페이지로 이동하기</p> -->
+                  <ul class="gauge_ul">
+                    <li class="gauge_li">
+                      목표<progress
+                        class="progress"
+                        value="20"
+                        max="100"
+                      ></progress>
+                    </li>
+                    <li class="gauge_li">
+                      과제<progress
+                        class="progress"
+                        value="30"
+                        max="100"
+                      ></progress>
+                    </li>
+                    <li class="gauge_li">
+                      할일<progress
+                        class="progress"
+                        value="50"
+                        max="100"
+                      ></progress>
+                    </li>
+                  </ul>
+                  <img class="none" src="../img/none.png" />
+                </div>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <a href="../diarylistpage/diarylistpage.html">
+            <div class="main_box_wrap">
+              <div class="main_box">
+                <div class="main_box_title_wrap">
+                  <p class="main_box_title">DiaryPage</p>
+                  <img class="arrow_img" src="../img/arrow.png" />
+                </div>
+                <hr />
+                <div class="main_box_body_wrap">
+                  <img
+                    id="go_diary"
+                    class="main_box_body_img"
+                    src="../img/go_diary.png"
+                  />
+                  <!-- <p class="main_box_body">일기 페이지로 이동하기</p> -->
+                  <ul class="diary_ul">
+                    <li class="diary_li">후배님과 밥약속</li>
+                    <li class="diary_li">후배님과 밥약속</li>
+                    <li class="diary_li">후배님과 밥약속</li>
+                  </ul>
+                  <img class="none" src="../img/none.png" />
+                </div>
+              </div>
+            </div>
+          </a>
+          <hr />
+          <a href="../articlelistpage/articlelistpage.html">
+            <div class="main_box_wrap">
+              <div class="main_box">
+                <div class="main_box_title_wrap">
+                  <p class="main_box_title">ArticlePage</p>
+                  <img class="arrow_img" src="../img/arrow.png" />
+                </div>
+                <hr />
+                <div class="main_box_body_wrap">
+                  <img
+                    id="go_article"
+                    class="main_box_body_img"
+                    src="../img/go_article.png"
+                  />
+                  <!-- <p class="main_box_body">내가 쓴글 확인하러 가기</p> -->
+                  <ul class="diary_ul">
+                    <!-- <li class="diary_li">후배님과 밥약속</li> -->
+                  </ul>
+                  <img class="none" src="../img/none.png" />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
