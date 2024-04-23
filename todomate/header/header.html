@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./header.css"/>
-  <script defer src="./header.js"></script>
-  <title>Document</title>
-</head>
-<body>
-  <div class="header">
-    <div class="left-header">
-      <div class="hamburger-menu" id="hamburgerMenu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./header.css" />
+    <script defer src="./header.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="left-header">
+        <!-- <div class="hamburger-menu" id="hamburgerMenu">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
+      </div> -->
+        <div class="logo-wrap">
+          <a href="./mainpage.html">
+            <img class="logo" src="./img/logo.png" />
+          </a>
+        </div>
       </div>
-      <div class="logo-wrap">
-        <a href="./mainpage.html">
-          <img class="logo" src="./img/logo.png" />
-        </a>
+      <div class="center-header">
+        <nav>
+          <ul>
+            <li>
+              <a href="./mainpage.html" class="active-menu">커뮤니티말고</a>
+            </li>
+            <li>
+              <a href="../diary/diarypage.html" class="none-acitve"
+                >뭐가들어가죠</a
+              >
+            </li>
+            <li>
+              <a href="../community/html/communitypage.html" class="none-acitve"
+                >Community</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="right-menu">
+        <button class="mypage-btn">
+          <img src="./img/account.png" />
+        </button>
+      </div>
+      <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+        <button class="close-btn" id="close-btn">×</button>
+        <div class="mypage-menu">
+          <img src="img/change.png" />
+        </div>
+        <div class="user-wrap">
+          <div class="user-email">userId</div>
+          <div class="user-nick-name">유저 닉네임</div>
+        </div>
+        <div class="mypage-link-wrap">
+          <a href="../goal/goalpage/goalpage.html" class="goal-page"
+            ><img />Goal Page
+          </a>
+          <a href="../login/loginpage.html" class="log-out"> Log Out</a>
+        </div>
       </div>
     </div>
-    <div class="center-header">
-      <nav>
-        <ul>
-          <li><a href="./mainpage.html" class="active-menu">커뮤니티말고</a></li>
-          <li>
-            <a href="../diary/diarypage.html" class="none-acitve">뭐가들어가죠</a>
-          </li>
-          <li>
-            <a
-              href="../community/html/communitypage.html"
-              class="none-acitve"
-              >Community</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="right-menu">
-      <button class="mypage-btn">
-        <img src="./img/account.png" />
-      </button>
-    </div>
-    <div class="mypage-menu-wrap" id="mypage-menu-wrap">
-      <button class="close-btn" id="close-btn">×</button>
-      <div class="mypage-menu">
-        <img src="img/change.png" />
-      </div>
-      <div class="user-wrap">
-        <div class="user-email">userId</div>
-        <div class="user-nick-name">유저 닉네임</div>
-      </div>
-      <div class="mypage-link-wrap">
-        <a href="../goal/goalpage/goalpage.html" class="goal-page"
-          ><img />Goal Page
-        </a>
-        <a href="../login/loginpage.html" class="log-out"> Log Out</a>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

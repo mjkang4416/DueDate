@@ -1,30 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/write.css">
-</head>
-<body>
-    <header>헤더입니다</header>
-    <div class="main-text">write</div>
-        <div class="form">
-            <form>
-                <div class="write">
-                    <span class="g">글쓰기</span>
-                    <div>나만의 계획과 습관을.</div>
-                    <div>모두와 나누어 보세요.</div>
-                </div>
-                <div class="title">Title</div>
-                <input id="title" type="text" placeholder=" 제목을 입력하세요" name="title" class="t" required>
-                <div class="header">Comment</div>
-                <textarea id="data" placeholder="내용을 입력하세요" name="detail" class="data" required>
-                </textarea>
-            </label>
-                <div><input type="submit" class="submit" value="등록"></div>
-            </form>
+    <link rel="stylesheet" href="../css/write.css" />
+    <link rel="stylesheet" href="../../header/common.css" />
+    <script defer src="../../header/header.js"></script>
+  </head>
+  <body>
+    <header id="app-header">
+      <div class="header">
+        <div class="left-header">
+          <div class="logo-wrap">
+            <a href="../../diary/diarypage.html">
+              <img class="logo" src="../logo.png"
+            /></a>
+          </div>
         </div>
+        <div class="center-header">
+          <nav>
+            <ul>
+              <li>
+                <a href="../../diary/diarypage.html" class="none-acitve"
+                  >Diary</a
+                >
+              </li>
+              <li>
+                <a href="../../goal/goalpage/goalpage.html" class="none-acitve"
+                  >MyDuedate</a
+                >
+              </li>
+              <li>
+                <a href="../html/communitypage.html" class="active-menu"
+                  >Community</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="right-menu">
+          <button class="mypage-btn">
+            <img src="../../header/img/account.png" />
+          </button>
+        </div>
+        <div class="mypage-menu-wrap" id="mypage-menu-wrap">
+          <button class="close-btn" id="close-btn">×</button>
+          <div class="mypage-menu">
+            <img src="../../header/img/change.png" />
+          </div>
+          <div class="user-wrap">
+            <div class="user-email">email@email.com</div>
+            <div class="user-nick-name">유저 닉네임</div>
+          </div>
+          <div class="mypage-link-wrap">
+            <a href="../../goal/goalpage/goalpage.html" class="goal-page"
+              ><img />Goal Page</a
+            >
+            <a href="../../login/loginpage.html" class="log-out"> Log Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main-text">write</div>
+    <div class="form">
+      <form>
+        <div class="write">
+          <span class="g">글쓰기</span>
+          <div>나만의 계획과 습관을.</div>
+          <div>모두와 나누어 보세요.</div>
+        </div>
+        <div class="title">Title</div>
+        <input
+          id="title"
+          type="text"
+          placeholder=" 제목을 입력하세요"
+          name="title"
+          class="t"
+          required
+        />
+        <div class="header">Comment</div>
+        <textarea
+          id="data"
+          placeholder="내용을 입력하세요"
+          name="detail"
+          class="data"
+          required
+        >
+        </textarea>
+
+        <div><input type="submit" class="submit" value="등록" /></div>
+      </form>
+    </div>
     <footer>푸터입니다.</footer>
-</body>
+  </body>
 </html>

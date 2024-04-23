@@ -1,100 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.main-text{
-    width: 100%;
-    height: 100px;
-    font-size: 50px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-text {
+  width: 100%;
+  height: 100px;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form{
-    margin-top: 30px;
-    padding: 0 200px;
-    display: flex;
-    align-items: center;
+.form {
+  margin-top: 30px;
+  padding: 0 200px;
+  display: flex;
+  align-items: center;
 }
 
-form{
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+form {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-.write h2{
+.write h2 {
   line-height: 30px;
 }
 
-.write div{
-    margin-top: 5px;
-    font-size: 20px;
-    color: #666;
-    font-weight: bold;
+.write div {
+  margin-top: 5px;
+  font-size: 20px;
+  color: #666;
+  font-weight: bold;
 }
 
-
-.title{
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
+.title {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-#title{
-    box-sizing: border-box;
-    height: 30px;
-    border: 1px solid #e1e1e1;
+#title {
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid #e1e1e1;
 }
 
-.header{
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
+#data {
+  box-sizing: border-box;
+  height: 30em;
+  resize: none;
+  margin-bottom: 10px;
+  border: 1px solid #e1e1e1;
 }
 
-#data{
-    box-sizing: border-box;
-    height: 30em;
-    resize: none;
-    margin-bottom: 10px;
-    border: 1px solid #e1e1e1;
+.img-click {
+  font-weight: bold;
+  border: 1px solid #e1e1e1;
+  font-size: 20px;
 }
 
-.img-click{
-    font-weight: bold;
-    border: 1px solid #e1e1e1;
-    font-size: 20px;
+.submit {
+  margin-top: 10px;
+  padding: 6px 5px;
+  border: 1px solid #e1e1e1;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #666;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
 }
 
-.submit{
-    margin-top: 10px;
-    padding: 6px 5px;
-    border: 1px solid #e1e1e1;
-    box-sizing: border-box;
-    font-size: 20px;
-    color: #666;
-    text-align: center;
-    line-height: 1;
-    cursor: pointer;  
-    width: 100px;
-    height: 50px;
+#image_container {
+  width: 100px;
+  height: 100px;
 }
 
-#image_container{
-    width: 100px;
-    height: 100px;
+.g {
+  font-size: 70px;
+  font-weight: 600;
 }
-
-.g{
-    font-size: 70px;
-    font-weight: 600;
-}
-
-
-

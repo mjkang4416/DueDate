@@ -440,18 +440,16 @@ button {
 }
 */
 
-
 /* 투두리스트 */
 .todo-list {
   margin-top: 10px;
 }
 
-.todo-header{
+.todo-header {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
 }
-
 
 /* .tune-wrap {
   display: flex;
@@ -465,7 +463,6 @@ button {
   width: 40px;
   height: 40px;
 } */
-
 
 .datepicker-todo {
   margin-bottom: 24px;
