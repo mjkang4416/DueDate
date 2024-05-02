@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /* font: inherit; */
+  vertical-align: baseline;
+}
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+/* article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+} */
+body {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+/* blockquote,
+q {
+  quotes: none;
+} */
+/* blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+} */
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+} */
+/* input {
+  border: none;
+  background-color: transparent;
+} */
+
+.todo-list input {
+  border: none;
+  background-color: transparent;
+}
+input[type="checkbox"]&:checked {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid#000;
+  background-color: #000; /* 체크됐을 때 배경색을 변경합니다. */
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.active-menu {
+  color: #000;
+}
+.none-acitve {
+  color: #b0b0b0;
+}
+.header {
+  position: relative;
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.left-header {
+  display: flex;
+  align-items: center;
+}
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 999;
+}
+
+.bar {
+  width: 28px;
+  height: 2px;
+  background-color: #000;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.left-menu {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  height: 100%;
+  transition: 0.4s;
+}
+
+.left-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-menu ul li {
+  padding: 10px;
+}
+
+.left-menu ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.show-menu {
+  left: 0;
+}
+.logo {
+  width: 138px;
+  height: 44px;
+}
+.logo-wrap {
+  align-items: center;
+  margin-left: 20px;
+}
+.center-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-header nav ul {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 800;
+}
+.center-header nav ul li {
+  margin-right: 24px;
+}
+.mypage-btn img {
+  width: 40px;
+  height: 40px;
+}
+.mypage-menu-wrap {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 40px;
+  width: 288px;
+  background-color: #b0b0b0;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 500;
+}
+
+.mypage-menu-wrap.active-page {
+  display: block;
+}
+.mypage-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: 700;
+  color: #666;
+}
+.close-btn:hover {
+  color: #000;
+}
+.user-email {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.user-nick-name {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.mypage-link-wrap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 0 40px;
+  margin-bottom: 24px;
+}
