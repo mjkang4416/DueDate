@@ -420,3 +420,55 @@ submitTodoBtn1.addEventListener("click", () => {
   };
   submitTodoCategory1();
 });
+// 케테고리 컬러변경
+var colorModal = document.getElementById("colorModal");
+var btn = document.getElementById("colorOpenModal");
+var span = document.getElementsByClassName("color-close")[0];
+
+btn.onclick = function () {
+  colorModal.style.display = "block";
+};
+
+span.onclick = function () {
+  colorModal.style.display = "none";
+};
+
+var selectedColors = {
+  categoryColor1: null,
+  categoryColor2: null,
+  categoryColor3: null,
+};
+
+// 각 카테고리 색상 옵션에 대한 이벤트 처리
+var categorySelectors = document.getElementsByClassName("category-selector");
+for (var i = 0; i < categorySelectors.length; i++) {
+  var colorBox = categorySelectors[i].getElementsByClassName("color-box")[0];
+  colorBox.onclick = function (event) {
+    var selectedColor = event.target.style.backgroundColor; // 선택된 색상
+    var category = this.parentNode.getElementsByClassName("color-box")[0].id; // 선택된 카테고리
+
+    // 선택된 색상 저장
+    selectedColors[category] = selectedColor;
+
+    // 해당 카테고리의 배경색 변경
+    var categoryDiv = document.getElementById(category.replace("Color", ""));
+    categoryDiv.style.backgroundColor = selectedColor;
+    // 선택된 색상에 selected-color 클래스 추가
+    var colorOptions = this.getElementsByClassName("color-option");
+    for (var j = 0; j < colorOptions.length; j++) {
+      colorOptions[j].classList.remove("selected-color");
+    }
+    event.target.classList.add("selected-color");
+    // // 다른 카테고리에서 이미 선택된 색상인지 확인
+    // for (var key in selectedColors) {
+    //   if (key !== category && selectedColors[key] === selectedColor) {
+    //     // 경고 메시지 표시
+    //     alert("이미 선택된 색상입니다. 다른 색상을 선택하세요.");
+    //     // 선택 취소
+    //     selectedColors[category] = null;
+    //     categoryDiv.style.backgroundColor = ""; // 배경색 제거
+    //     return;
+    //   }
+    // }
+  };
+}
