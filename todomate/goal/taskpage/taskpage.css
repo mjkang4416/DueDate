@@ -102,6 +102,7 @@ main {
 
 .box_title_wrap {
   margin: 0 250px;
+  margin-top: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,7 +171,9 @@ main {
   display: flex;
   justify-content: right;
 }
-
+.main_link a {
+  margin: 0 10px;
+}
 .a_wrap {
   display: flex;
   justify-content: space-between;
