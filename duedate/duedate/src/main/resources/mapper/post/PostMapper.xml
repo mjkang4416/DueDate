@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.duedate.mapper.PostMapper">
+
+<!--    시퀀스 만들기 -->
+   <select id="getSeq" resultType="long">
+        SELECT seq_post.NEXTVAL FROM dual
+    </select>
+
+<!--    특정 게시글 작성-->
+    <insert id="insertPost">
+        INSERT INTO TBL_POSTS
+        (POST_ID, USER_NUMBER, USER_ID, POST_TITLE, POST_CONTENT, POST_VIEW, POST_DATE, POST_UPDATE_DATE)
+        VALUES
+            (#{postId}, #{boardTitle}, #{userId}, #{postTitle},#{postContent}, 0, SYSDATE, SYSDATE)
+    </insert>
+
+<!--    특정 게시글 보기-->
+<!--    <select id="selectPost" resultType="postVO">-->
+<!--        SELECT * FROM TBL_POSTS WHERE POST_ID = #{postId}-->
+<!--    </select>-->
+
+<!--특정 게시글 상세보기-->
+    <select id="selectPostDetail" resultType="PostsDTO">
+        SELECT P.POST_ID, P.POST_TITLE, U.USER_NICNAME,U.USER_ID, P.POST_VIEW, P.POST_DATE
+        FROM TBL_POST P JOIN TBL_USERS U ON U.USER_NUMBER = P.USER_NUMBER
+        WHERE P.POST_ID = #{postId}
+    </select>
+
+<!--    아니 게시글보기가 왜 두개나 필요한거고 왜 반환타입이랑 파라미터가 다르냐 .. -->
+
+
+<!--게시글 업데이트-->
+    <update id="updatePost">
+        UPDATE TBL_POST
+        SET POST_TITLE = #{postTitle},
+            POST_CONTENT = #{postContent},
+            POST_UPDATE_DATE = SYSDATE
+        WHERE POST_ID = #{postId}
+    </update>
+
+<!-- 조회수 업데이트-->
+    <update id="plusViews">
+        UPDATE TBL_POST
+        SET
+            POST_VIEW = POST_VIEW + 1
+        WHERE POST_ID = #{postId}
+    </update>
+
+<!--  특정 게시글 삭제-->
+
+    <delete id="deletePost">
+        DELETE FROM TBL_POST WHERE POST_ID = #{postId}
+    </delete>
+
+
+    <select id="selectAll" resultType="postsDTO">
+        SELECT P.POST_ID, P.POST_TITLE, P.POST_VIEW, P.POST_DATE, P.POST_UPDATE_DATE, U.USER_ID
+        U.USER_NICNAME,U.USER_PIC,
+        FROM TBL_POSTS P JOIN TBL_USERS U
+        ON U.USER_NUMBER = P.USER_NUMBER
+        ORDER BY
+            P.POST_UPDATE_DATE DESC
+    </select>
+
+</mapper>
