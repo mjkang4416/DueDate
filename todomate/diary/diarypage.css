@@ -467,11 +467,62 @@ button {
 .datepicker-todo {
   margin-bottom: 24px;
 }
+/* 카테고리 색 변경 */
+.category-selector {
+  margin-top: 20px;
+}
+.color-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.color-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.color-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.color-close:hover,
+.color-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.color-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.selected-color {
+  border: 5px solid black;
+}
 .category {
   position: relative;
   width: 100%;
   border-radius: 20px;
-  background-color: #b0b0b0;
   height: 32px;
   padding-left: 4px;
   line-height: 32px;
@@ -481,7 +532,11 @@ button {
   align-items: center;
   padding: 0 8px;
 }
-
+#category1,
+#category2,
+#category3 {
+  background-color: #b0b0b0;
+}
 .drop-down img {
   transition: transform 0.3s ease;
 }
