@@ -1,304 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../static/css/diary_css/diarypage.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <link
-      href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="../../static/css/header_css/common.css" />
-    <script defer src="../../static/js/diary_js/diarypage.js"></script>
-    <!-- <script src="../header/header.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script
-      src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js"
-      type="text/javascript"
-    ></script>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./diarypage.css" />
+  <link rel="stylesheet" href="../../static/css/diary_css/diarypage.css" />
   <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
   />
   <link
-          href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css"
-          rel="stylesheet"
-          type="text/css"
+    href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css"
+    rel="stylesheet"
+    type="text/css"
   />
-  <link rel="stylesheet" href="../header/common.css" />
-  <script defer src="./diarypage.js"></script>
+  <link rel="stylesheet" href="../../static/css/header_css/common.css" />
+  <script defer src="../../static/js/diary_js/diarypage.js"></script>
   <!-- <script src="../header/header.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script
-          src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js"
-          type="text/javascript"
-  ></script>
-
-<<<<<<< HEAD
-  <body>
-    <div id="app">
-      <header id="app-header">
-        <div class="header">
-          <div class="left-header">
-            <div class="logo-wrap">
-              <a href="./diarypage.html">
-                <img class="logo" src="../../static/img/diary_img/logo.png"
-              /></a>
-            </div>
-          </div>
-          <div class="center-header">
-            <nav>
-              <ul>
-                <li><a href="./diarypage.html" class="active-menu">Diary</a></li>
-                <li><a href="../goal_html/goalpage/goalpage.html" class="none-acitve">MyDuedate</a></li>
-                <li>
-                  <a href="../community_html/communitypage.html" class="none-acitve">Community</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="right-menu">
-            <button class="mypage-btn">
-              <img src="../../static/img/diary_img/account.png" />
-            </button>
-          </div>
-          <div class="mypage-menu-wrap" id="mypage-menu-wrap">
-            <button class="close-btn" id="close-btn">×</button>
-            <div class="mypage-menu">
-              <img src="../../static/img/diary_img/change.png" />
-            </div>
-            <div class="user-wrap">
-              <div class="user-email">email@email.com</div>
-              <div class="user-nick-name">유저 닉네임</div>
-            </div>
-            <div class="mypage-link-wrap">
-              <a href="../goal_html/goalpage/goalpage.html" class="goal-page"
-                ><img />Goal Page</a
-              >
-              <a href="../login_html/loginpage.html" class="log-out"> Log Out</a>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <!--  -->
-      <div class="diarySection">
-        <section class="leftHamburger">
-          <!-- style="display: none;" -->
-          <div class="leftNavWrap">
-            <div class="leftNavWrapWeather">
-              <div class="api">
-                <div id="ww_bf23c7290376b" v="1.3" loc="id" a='{"t":"horizontal","lang":"ko","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-                  More forecasts:
-                  <a href="https://oneweather.org/seoul/30_days/" id="ww_bf23c7290376b_u" target="_blank">Weather Seoul 30 days</a>
-                </div>
-                <script async src="https://app2.weatherwidget.org/js/?id=ww_bf23c7290376b"></script>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="leftNavWrapCalendar"> -->
-          <!--  -->
-          <!-- <div class="leftCalender">
-                            <div class="left leftCalendarMonth">
-                                <p class="leftCurrent-date"></p>
-                                <button id="prev" class="btn leftButton material-symbols-outlined"> chevron_left </button>
-                                <input type="button" id="leftGoToday" class="btn leftTodayButton " value="today">
-                                <button id="next" class="btn leftButton material-symbols-outlined"> chevron_right </button>
-                            </div>
-                        </div> -->
-          <!-- <div class="leftCalendardate">
-                            <ul class="weeks">
-                                <li>Sun</li>
-                                <li>Mon</li>
-                                <li>Tue</li>
-                                <li>Wed</li>
-                                <li>Thu</li>
-                                <li>Fri</li>
-                                <li>Sat</li>
-                            </ul>
-                            <ul class="leftDays">
-                            </ul>
-                        </div> -->
-          <!--  -->
-          <!-- </div> -->
-          <!-- <div class="leftNavWrapDiarylist">
-
-                        <div class="leftNavWrapDiary">
-                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo diaryEmo"><p>이모티콘</p></button>
-                            </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>이모티콘 자리엔 일기장에서 작성한 이모티콘이 들어갈 예정입니다</p></div>
-                        </div>
-                        <div class="leftNavWrapDiary">
-                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모티ㅏ콘</p></button>
-                            </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>이곳은 지금까지 작성한 일기들을 사이드바에서 작게 확인할 수 있습니다 </p></div>
-                        </div>
-                        <div class="leftNavWrapDiary">
-                            <div id="diaryTitle" class="leftDiaryTitle"><p>제목제목</p>
-                                <button id="diaryEmo" class="btn leftDiaryEmo"><p>이모티콘</p></button>
-                            </div>
-                            <div id="diaryDetail" class="leftDiaryDetail"><p>디비연동이 필요해보여 임시로 작성해 놓았습니다 연동은 백단기간에 진행하도록 하겠습니다</p></div>
-                        </div>
-                    </div>
-                </div> -->
-
-          <!-- todolist ======================-->
-          <div class="todo-header">
-            <div class="datepicker-todo">
-              <input type="text" id="datepickerTodo" readonly required />
-            </div>
-            <div class="tune-wrap">
-              <a href="../../../../../../../todomate/goal/goalpage/goalpage.html"
-                ><button class="material-symbols-outlined">tune</button></a
-              >
-            </div>
-          </div>
-          <div class="todo-list">
-            <div class="category" id="category1">
-              <div>
-                <input id="categoryName1" class="category-name" placeholder="목표 설정"/>
-              </div>
-              <div class="add-todo-wrap">
-                <button class="add-todo" onclick="addNewTodoList(event)">
-                  <span class="material-symbols-outlined">add_circle</span>
-                </button>
-              </div>
-              <div class="send-wrap">
-                <button class="send" id="submitTodo1">
-                  <span class="material-symbols-outlined">send</span>
-                </button>
-              </div>
-            </div>
-            <div class="check-todo-wrap"></div>
-          </div>
-          <div class="todo-list">
-            <div class="category" id="category2">
-              <div>
-                <input class="category-name" placeholder="목표 설정" />
-              </div>
-              <div class="add-todo-wrap">
-                <button class="add-todo" onclick="addNewTodoList(event)">
-                  <span class="material-symbols-outlined">add_circle</span>
-                </button>
-              </div>
-              <div class="send-wrap">
-                <button class="send" id="submitTodo2">
-                  <span class="material-symbols-outlined">send</span>
-                </button>
-              </div>
-            </div>
-            <div class="check-todo-wrap"></div>
-          </div>
-          <div class="todo-list">
-            <div class="category" id="category3">
-              <div>
-                <input class="category-name" placeholder="목표 설정" />
-              </div>
-              <div class="add-todo-wrap">
-                <button class="add-todo" onclick="addNewTodoList(event)">
-                  <span class="material-symbols-outlined">add_circle</span>
-                </button>
-              </div>
-              <div class="send-wrap">
-                <button class="send" id="submitTodo3">
-                  <span class="material-symbols-outlined">send</span>
-                </button>
-              </div>
-            </div>
-            <div class="check-todo-wrap"></div>
-          </div>
-        </section>
-        <!-- 일기장 || 큰달력 -->
-        <div class="rightSectionrWrap">
-          <div class="diaryTopWrap">
-            <div class="diaryTopBtnWrap">
-              <div class="writeDiarybtn">
-                <button id="showDiary" class="diarybtn material-symbols-outlined">two_pager</button>
-              </div>
-              <div class="showCalendar">
-                <button id="showCalendarbtn" class="calendarbtn material-symbols-outlined">calendar_month</button>
-              </div>
-            </div>
-          </div>
-          <!-- 큰달력 -->
-          <section class="diaryCalender">
-            <div class="rightCalendarMonth">
-              <div class="todayBtn-div">
-                <input type="button" id="rightGoToday" class="btn rightTodayButton" value="today"/>
-              </div>
-              <div class="rightCalendatBtn">
-                <button id="prev" class="btn rightButton material-symbols-outlined">chevron_left</button>
-                <p class="current-date"></p>
-                <button id="next" class="btn rightButton material-symbols-outlined">chevron_right</button>
-              </div>
-            </div>
-            <div class="rightCalender">
-              <div class="rightCalendardate">
-                <ul class="weeks">
-                  <div><li>Sun</li></div>
-                  <div><li>Mon</li></div>
-                  <div><li>Tue</li></div>
-                  <div><li>Wed</li></div>
-                  <div><li>Thu</li></div>
-                  <div><li>Fri</li></div>
-                  <div><li>Sat</li></div>
-                </ul>
-                <ul class="days"></ul>
-              </div>
-            </div>
-          </section>
-          <!-- 일기장 -->
-          <section class="myDiary" style="display: none">
-            <!-- style="display: none;" -->
-            <div class="diaryOrCalendar">✨일기장🎉</div>
-            <div class="writeDiarySection">
-              <form id="writeDiary" class="writeDiaryForm" action="#">
-                <div class="myDiaryTop">
-                  <div class="myDiaryDateWrap">
-                    <div>날짜 :</div>
-                    <!-- <input type="text" class="myDiaryDateText"> 
-                                    <input type="date" class="myDiaryDate" > -->
-                    <input type="text" id="datepicker" width="30%" readonly required/>
-                  </div>
-                  <div class="myDiaryEmoWrap">
-                    <select name="날씨" id="diaryEmo" class="rightDiaryEmo">
-                      <option value="🌞">맑음 🌞</option>
-                      <option value="☁">구름 ☁</option>
-                      <option value="🌨">비🌨</option>
-                      <option value="🌩">번개🌩</option>
-                      <option value="⛅">흐림⛅</option>
-                      <option value="😀">😀</option>
-                      <option value="😱">😱</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="myDiaryTitleWrap">
-                  <div>제목 :</div>
-                  <input type="text" id="myDiaryTitle" name="myDiaryTitle" class="myDiaryTitle" placeholder="제목 (최대 17글자)" maxlength="17" required/>
-                </div>
-                <div class="myDiaryDetailWrap">
-                  <textarea id="diaryDetail" class="myDiaryDetail" placeholder="최대 70글자까지 작성 가능합니다" maxlength="70" required></textarea>
-                </div>
-                <input type="button" id="submit" class="submit-button" value="저장" name="제출버튼"/>
-                <input type="button" id="cancel" value="작성 취소" />
-              </form>
-            </div>
-          </section>
-=======
+  <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
 
   <title>Diary</title>
 </head>
@@ -309,54 +29,43 @@
     <div class="header">
       <div class="left-header">
         <div class="logo-wrap">
-          <a href="../diary/diarypage.html">
-            <img class="logo" src="../header/img/logo.png"
-            /></a>
+          <a href="./diarypage.html"><img class="logo" src="../../static/img/diary_img/logo.png"/></a>
         </div>
       </div>
       <div class="center-header">
         <nav>
           <ul>
             <li>
-              <a href="../diary/diarypage.html" class="active-menu"
-              >Diary</a
-              >
+              <a href="./diarypage.html" class="active-menu">Diary</a>
             </li>
             <li>
-              <a href="../goal/goalpage/goalpage.html" class="none-acitve"
-              >MyDuedate</a
-              >
+              <a href="../goal_html/goalpage/goalpage.html" class="none-acitve">MyDuedate</a>
             </li>
             <li>
-              <a
-                      href="../community/html/communitypage.html"
-                      class="none-acitve"
-              >Community</a
-              >
+              <a href="../community_html/communitypage.html" class="none-acitve">Community</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="right-menu">
         <button class="mypage-btn">
-          <img src="./img/account.png" />
+          <img src="../../static/img/diary_img/account.png" />
         </button>
       </div>
       <div class="mypage-menu-wrap" id="mypage-menu-wrap">
         <button class="close-btn" id="close-btn">×</button>
         <div class="mypage-menu">
-          <img src="img/change.png" />
+          <img src="../../static/img/diary_img/change.png" />
         </div>
         <div class="user-wrap">
           <div class="user-email">email@email.com</div>
           <div class="user-nick-name">유저 닉네임</div>
         </div>
         <div class="mypage-link-wrap">
-          <a href="../goal/goalpage/goalpage.html" class="goal-page"
+          <a href="../goal_html/goalpage/goalpage.html" class="goal-page"
           ><img />Goal Page</a
           >
-          <a href="../login/loginpage.html" class="log-out"> Log Out</a>
->>>>>>> c70850481a6738dc025a0a201f03e1f9539081ce
+          <a href="../login_html/loginpage.html" class="log-out"> Log Out</a>
         </div>
       </div>
     </div>
@@ -369,24 +78,11 @@
       <div class="leftNavWrap">
         <div class="leftNavWrapWeather">
           <div class="api">
-            <div
-                    id="ww_bf23c7290376b"
-                    v="1.3"
-                    loc="id"
-                    a='{"t":"horizontal","lang":"ko","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'
-            >
+            <div id="ww_bf23c7290376b" v="1.3" loc="id" a='{"t":"horizontal","lang":"ko","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
               More forecasts:
-              <a
-                      href="https://oneweather.org/seoul/30_days/"
-                      id="ww_bf23c7290376b_u"
-                      target="_blank"
-              >Weather Seoul 30 days</a
-              >
+              <a href="https://oneweather.org/seoul/30_days/" id="ww_bf23c7290376b_u" target="_blank">Weather Seoul 30 days</a>
             </div>
-            <script
-                    async
-                    src="https://app2.weatherwidget.org/js/?id=ww_bf23c7290376b"
-            ></script>
+            <script async src="https://app2.weatherwidget.org/js/?id=ww_bf23c7290376b"></script>
           </div>
         </div>
       </div>
@@ -451,64 +147,31 @@
           <div id="colorModal" class="color-modal">
             <div class="color-modal-content">
               <span class="color-close">&times;</span>
+
               <div class="category-selector">
                 <h2>카테고리 1 색상 변경</h2>
                 <div class="color-box" id="categoryColor1">
-                  <div
-                          class="color-option"
-                          id="red1"
-                          style="background-color: red"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="blue1"
-                          style="background-color: blue"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="green1"
-                          style="background-color: green"
-                  ></div>
+                  <div class="color-option" id="red1" style="background-color: red"></div>
+                  <div class="color-option" id="blue1" style="background-color: blue"></div>
+                  <div class="color-option" id="green1" style="background-color: green"></div>
                 </div>
               </div>
+
               <div class="category-selector">
                 <h2>카테고리 2 색상 변경</h2>
                 <div class="color-box" id="categoryColor2">
-                  <div
-                          class="color-option"
-                          id="red2"
-                          style="background-color: red"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="blue2"
-                          style="background-color: blue"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="green2"
-                          style="background-color: green"
-                  ></div>
+                  <div class="color-option" id="red2" style="background-color: red"></div>
+                  <div class="color-option" id="blue2" style="background-color: blue"></div>
+                  <div class="color-option" id="green2" style="background-color: green"></div>
                 </div>
               </div>
+
               <div class="category-selector">
                 <h2>카테고리 3 색상 변경</h2>
                 <div class="color-box" id="categoryColor3">
-                  <div
-                          class="color-option"
-                          id="red3"
-                          style="background-color: red"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="blue3"
-                          style="background-color: blue"
-                  ></div>
-                  <div
-                          class="color-option"
-                          id="green3"
-                          style="background-color: green"
-                  ></div>
+                  <div class="color-option" id="red3" style="background-color: red"></div>
+                  <div class="color-option" id="blue3" style="background-color: blue"></div>
+                  <div class="color-option" id="green3" style="background-color: green"></div>
                 </div>
               </div>
             </div>
@@ -518,11 +181,7 @@
       <div class="todo-list">
         <div class="category" id="category1">
           <div>
-            <input
-                    id="categoryName1"
-                    class="category-name"
-                    placeholder="목표 설정"
-            />
+            <input id="categoryName1" class="category-name" placeholder="목표 설정"/>
           </div>
           <div class="add-todo-wrap">
             <button class="add-todo" onclick="addNewTodoList(event)">
@@ -579,20 +238,10 @@
       <div class="diaryTopWrap">
         <div class="diaryTopBtnWrap">
           <div class="writeDiarybtn">
-            <button
-                    id="showDiary"
-                    class="diarybtn material-symbols-outlined"
-            >
-              two_pager
-            </button>
+            <button id="showDiary" class="diarybtn material-symbols-outlined">two_pager</button>
           </div>
           <div class="showCalendar">
-            <button
-                    id="showCalendarbtn"
-                    class="calendarbtn material-symbols-outlined"
-            >
-              calendar_month
-            </button>
+            <button id="showCalendarbtn" class="calendarbtn material-symbols-outlined">calendar_month</button>
           </div>
         </div>
       </div>
@@ -600,27 +249,12 @@
       <section class="diaryCalender">
         <div class="rightCalendarMonth">
           <div class="todayBtn-div">
-            <input
-                    type="button"
-                    id="rightGoToday"
-                    class="btn rightTodayButton"
-                    value="today"
-            />
+            <input type="button" id="rightGoToday" class="btn rightTodayButton" value="today"/>
           </div>
           <div class="rightCalendatBtn">
-            <button
-                    id="prev"
-                    class="btn rightButton material-symbols-outlined"
-            >
-              chevron_left
-            </button>
+            <button id="prev" class="btn rightButton material-symbols-outlined">chevron_left</button>
             <p class="current-date"></p>
-            <button
-                    id="next"
-                    class="btn rightButton material-symbols-outlined"
-            >
-              chevron_right
-            </button>
+            <button id="next" class="btn rightButton material-symbols-outlined">chevron_right</button>
           </div>
         </div>
         <div class="rightCalender">
@@ -649,13 +283,7 @@
                 <div>날짜 :</div>
                 <!-- <input type="text" class="myDiaryDateText">
                                 <input type="date" class="myDiaryDate" > -->
-                <input
-                        type="text"
-                        id="datepicker"
-                        width="30%"
-                        readonly
-                        required
-                />
+                <input type="text" id="datepicker" width="30%" readonly required/>
               </div>
               <div class="myDiaryEmoWrap">
                 <select name="날씨" id="diaryEmo" class="rightDiaryEmo">
@@ -671,32 +299,12 @@
             </div>
             <div class="myDiaryTitleWrap">
               <div>제목 :</div>
-              <input
-                      type="text"
-                      id="myDiaryTitle"
-                      name="myDiaryTitle"
-                      class="myDiaryTitle"
-                      placeholder="제목 (최대 17글자)"
-                      maxlength="17"
-                      required
-              />
+              <input type="text" id="myDiaryTitle" name="myDiaryTitle" class="myDiaryTitle" placeholder="제목 (최대 17글자)" maxlength="17" required/>
             </div>
             <div class="myDiaryDetailWrap">
-                  <textarea
-                          id="diaryDetail"
-                          class="myDiaryDetail"
-                          placeholder="최대 70글자까지 작성 가능합니다"
-                          maxlength="70"
-                          required
-                  ></textarea>
+                  <textarea id="diaryDetail" class="myDiaryDetail" placeholder="최대 70글자까지 작성 가능합니다" maxlength="70" required></textarea>
             </div>
-            <input
-                    type="button"
-                    id="submit"
-                    class="submit-button"
-                    value="저장"
-                    name="제출버튼"
-            />
+            <input type="button" id="submit" class="submit-button" value="저장" name="제출버튼"/>
             <input type="button" id="cancel" value="작성 취소" />
           </form>
         </div>
