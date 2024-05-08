@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.duedate.mapper.DiaryMapper">
+<!--    일기 작성-->
+    <insert id="insertDiary" >
+        INSERT INTO TBL_DIARY
+        (DIARY_ID, USER_NUMBER, DIARY_DATE, DIARY_TITLE, DIARY_EMO, DIARY_CONTENT)
+        VALUES (SEQ_DIARY.NEXTVAL, #{userNumber}, #{diaryDate}, #{diaryTitle}, #{diaryEmo}, #{diaryContent})
+    </insert>
+
+<!--    일기 수정-->
+    <update id="updateDiary" parameterType="DiaryDTO">
+        UPDATE TBL_DIARY
+        SET DIARY_TITLE = #{diaryTitle},
+            DIARY_EMO = #{diaryEmo},
+            DIARY_CONTENT = #{diaryContent}
+        WHERE DIARY_ID = #{diaryId} AND DIARY_DATE = #{diaryDate}
+    </update>
+
+<!--    일기 보기-->
+    <select id="selectDiaryDetail" resultType="DiaryDTO">
+        SELECT D.DIARY_DATE, D.DIARY_TITLE, D.DIARY_EMO, D.DIARY_CONTENT
+        FROM TBL_DIARY D JOIN TBL_USERS U
+            ON D.USER_NUMBER = U.USER_NUMBER
+        WHERE D.DIARY_ID = #{diaryId}
+    </select>
+
+<!--    일기 삭제-->
+    <delete id="deleteDiary">
+        DELETE FROM TBL_DIARY WHERE DIARY_ID = #{diaryId}
+    </delete>
+
+<!--    이모티콘 -->
+    <select id="selectEmoAll" resultType="diaryDTO">
+        SELECT D.DIARY_EMO
+        FROM TBL_DIARY D JOIN TBL_USERS U
+            ON D.USER_NUMBER = U.USER_NUMBER
+        WHERE DIARY_DATE = #{diaryDate}
+    </select>
+</mapper>
