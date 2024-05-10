@@ -1,12 +1,11 @@
 package com.example.duedate.diaryMapper;
 
-import com.example.duedate.domain.diarydto.DiaryDTO;
+import com.example.duedate.domain.dto.DiaryDTO;
+import com.example.duedate.mapper.DiaryMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j

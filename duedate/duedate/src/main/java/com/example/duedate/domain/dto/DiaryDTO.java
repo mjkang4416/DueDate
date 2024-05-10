@@ -1,4 +1,4 @@
-package com.example.duedate.domain.diarydto;
+package com.example.duedate.domain.dto;
 
 import lombok.Data;
 

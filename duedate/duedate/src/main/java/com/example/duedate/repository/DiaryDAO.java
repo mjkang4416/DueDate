@@ -1,7 +1,7 @@
 package com.example.duedate.repository;
 
-import com.example.duedate.diaryMapper.DiaryMapper;
-import com.example.duedate.domain.diarydto.DiaryDTO;
+import com.example.duedate.mapper.DiaryMapper;
+import com.example.duedate.domain.dto.DiaryDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

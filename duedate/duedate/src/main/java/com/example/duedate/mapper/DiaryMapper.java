@@ -1,6 +1,6 @@
-package com.example.duedate.diaryMapper;
+package com.example.duedate.mapper;
 
-import com.example.duedate.domain.diarydto.DiaryDTO;
+import com.example.duedate.domain.dto.DiaryDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
